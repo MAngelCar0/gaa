@@ -4,14 +4,14 @@
     box-sizing: border-box;
     font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: black;
+    color: #bffcff;
     text-decoration: none;
 }
 
 /* Estilos del carrusel */
 .carrusel-container {
     width: 100%;
-    background-color: #f5f5f5;
+    color: #bffcff;
 }
 
 .carrusel {
@@ -44,8 +44,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: rgba(0,0,0,0.05);
+    color: #bffcff;
     border: none;
     padding: 16px;
     font-size: 18px;
@@ -60,7 +60,8 @@
 }
 
 .carrusel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #00f6ff;
+    color: #2a002a;
 }
 
 .prev {
@@ -94,7 +95,7 @@
 }
 
 body{
-    background-color: #f5f5f5;
+    background-color: #2a002a;
 }
 
 .encabezado{
@@ -103,7 +104,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #f5f5f5;
+    background-color: #2a002a;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -128,15 +129,16 @@ body{
 .busqueda button{
     width: 80px;
     height: 50px;
-    background-color: #333;
-    color: white;
+    background-color: #e600ff;
+    color: #bffcff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .busqueda button:hover {
-    background-color: #555;
+    background-color: #00f6ff;
+    color: #2a002a;
 }
 
 .busqueda input{
@@ -169,25 +171,26 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #333;
+    background-color: #08253a;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .categorias a {
-    color: white;
+    color: #00f6ff;
     width: 170px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #333;
+    background-color: #08253a;
     font-size: 18px;
     transition: all 0.3s ease;
     border-radius: 4px;
 }
 
 .categorias a:hover {
-    background-color: #555;
+    background-color: #e600ff;
+    color: #bffcff;
     transform: translateY(-2px);
 }
 
@@ -236,7 +239,8 @@ main{
     border-radius: 8px;
     overflow: hidden;
     margin-top: 20px;
-    background-color: white;
+    background-color: #08253a;
+    color: #bffcff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -259,7 +263,7 @@ main{
     margin: 15px auto;
     font-size: 14px;
     line-height: 1.5;
-    color: #333;
+    color: #bffcff;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 4;
@@ -294,7 +298,7 @@ main{
     align-items: center;
     justify-content: center;
     gap: 20px;
-    background-color: #f5f5f5;
+    background-color: #2a002a;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
@@ -302,6 +306,7 @@ main{
 .aliados img{
     width: 100px;
     height: 100px;
+    border: 2px solid #e600ff;
     border-radius: 8px;
     object-fit: contain;
     transition: transform 0.3s ease;
@@ -322,7 +327,7 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #333;
+    background-color: #08253a;
     padding: 20px 0;
     margin-top: 30px;
 }
@@ -336,7 +341,7 @@ footer .redes-sociales {
 }
 
 footer .redes-sociales a {
-    color: white;
+    color: #bffcff;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -344,7 +349,7 @@ footer .redes-sociales a {
 }
 
 footer .redes-sociales a:hover {
-    color: #bfbfbf;
+    color: #e600ff;
 }
 
 footer .redes-sociales img {
@@ -355,7 +360,7 @@ footer .redes-sociales img {
 }
 
 footer .derechos p {
-    color: white;
+    color: #bffcff;
     font-size: 14px;
     text-align: center;
 }
