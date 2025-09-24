@@ -9,7 +9,7 @@
 }
 
 body{
-    background-color: #252525;
+    background-color: #2d002d;
     color: #FFFFFF;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -19,7 +19,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #f5f5f5;
+    background-color: #00475a;
+    color: #FFFFFF;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -28,12 +29,12 @@ body{
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #FFFFFF;
     transition: color 0.3s ease;
 }
 
 .encabezado a:first-child:hover {
-    color: #666;
+    color: #e600ff;
 }
  
 .busqueda {
@@ -44,15 +45,15 @@ body{
 .busqueda button{
     width: 80px;
     height: 50px;
-    background-color: #333;
-    color: white;
+    background-color: #e600ff;
+    color: #FFFFFF;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .busqueda button:hover {
-    background-color: #555;
+    background-color: #00cfff;
 }
 
 .busqueda input{
@@ -70,12 +71,12 @@ body{
 }
 
 .encabezado > a:last-child {
-    color: #333;
+    color: #FFFFFF;
     transition: color 0.3s ease;
 }
 
 .encabezado > a:last-child:hover {
-    color: #666;
+    color: #e600ff;
     text-decoration: underline;
 }
 
@@ -85,25 +86,27 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #333;
+    background-color: #00475a;
+    color: #FFFFFF;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .categorias a {
-    color: white;
+    color: #FFFFFF;
     width: 170px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #333;
+    background-color: #00475a;
     font-size: 18px;
     transition: all 0.3s ease;
     border-radius: 4px;
 }
 
 .categorias a:hover {
-    background-color: #4b4949;
+    background-color: #e600ff;
+    color: #FFFFFF;
     transform: translateY(-2px);
 }
 
@@ -111,7 +114,8 @@ body{
     display: flex;
     max-width: 1100px;
     margin: auto;
-    background-color: #1a1a1a;
+    background-color: #00475a;
+    color: #FFFFFF;
     margin-top: 2%;
     padding: 20px;
 }
@@ -127,8 +131,11 @@ body{
     width: 70px;
     height: 70px;
     object-fit: cover;
-    border: 2px solid #333;
+    border: 2px solid #e600ff;
     background-color: #222;
+    .Miniaturas img:hover {
+        border: 2px solid #00cfff;
+    }
 }
 
 .Imagen-Principal img{
@@ -143,7 +150,7 @@ body{
 
 .Detalles h2{
     font-size: 20px;
-    color: #c0a645;
+    color: #e600ff;
     margin-bottom: 15px;
 }
 
@@ -165,7 +172,7 @@ body{
 .Precio span{
     font-size: 18px;
     font-weight: bold;
-    color: #FFFFFF;
+    color: #e600ff;
 }
 footer{
     width: 100%;
@@ -174,7 +181,7 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #333;
+    background-color: #2d002d;
     padding: 20px 0;
     margin-top: 30px;
 }
@@ -188,7 +195,7 @@ footer .redes-sociales {
 }
 
 footer .redes-sociales a {
-    color: white;
+    color: #e600ff;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -196,7 +203,7 @@ footer .redes-sociales a {
 }
 
 footer .redes-sociales a:hover {
-    color: #bfbfbf;
+    color: #e600ff;
 }
 
 footer .redes-sociales img {

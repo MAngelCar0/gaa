@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #2d002d;
 }
 
 .encabezado{
@@ -19,7 +19,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #f5f5f5;
+    background-color: #2d002d;
+    color: #ffffff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -28,12 +29,12 @@ body {
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
     transition: color 0.3s ease;
 }
 
 .encabezado a:first-child:hover {
-    color: #666;
+    color: #e600ff;
 }
  
 .busqueda {
@@ -44,15 +45,15 @@ body {
 .busqueda button{
     width: 80px;
     height: 50px;
-    background-color: #333;
-    color: white;
+    background-color: #e600ff;
+    color: #ffffff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .busqueda button:hover {
-    background-color: #555;
+    background-color: #00cfff;
 }
 
 .busqueda input{
@@ -85,25 +86,26 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #333;
+    background-color: #00475a;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .categorias a {
-    color: white;
+    color: #ffffff;
     width: 170px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #333;
+    background-color: #00475a;
     font-size: 18px;
     transition: all 0.3s ease;
     border-radius: 4px;
 }
 
 .categorias a:hover {
-    background-color: #555;
+    background-color: #e600ff;
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
