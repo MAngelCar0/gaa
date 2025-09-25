@@ -95,8 +95,8 @@ header img {
 .registro {
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 4rem;
+  width: 40%;
   max-width: 700px;
   margin: 3rem auto;
   background-color: rgba(54, 1, 63, 0.7);
@@ -106,10 +106,7 @@ header img {
 
 .registro h1, .registro h2 {
   color: #ffffff;
-  margin-bottom: 1.5rem;
-  margin-top: 2rem;
-  text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   letter-spacing: 1px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -124,7 +121,7 @@ input, textarea, select {
   background-color: #660273;
   color: #ffffff;
   border: 2px solid #0E3A73;
-  padding: 1.5rem;
+  padding: 1.3rem;
   border-radius: 12px;
   width: 100%;
   transition: all 0.3s ease;
@@ -132,7 +129,7 @@ input, textarea, select {
   font-size: 1.3rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   max-width: 500px;
-  height: 70px;
+  height: 40px;
 }
 
 input:focus, textarea:focus, select:focus {
@@ -179,10 +176,12 @@ input:focus, textarea:focus, select:focus {
 
 .terminos input[type="checkbox"] {
   width: auto;
-  margin-right: 0.5rem;
+  height: 0.9rem;
+  margin-right: 0.2rem;
 }
 
 .condiciones {
+  margin-bottom: 2rem;
   font-size: 0.9rem;
 }
 
@@ -247,23 +246,6 @@ img {
 }
 
 /* ========================================
-   SLIDER
-======================================== */
-.slider {
-  position: relative;
-  overflow: hidden;
-  max-width: 900px;
-  margin: 2rem auto;
-}
-
-.slider img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* ========================================
    ICONOS DE REDES SOCIALES
 ======================================== */
 .social-container {
@@ -286,7 +268,7 @@ img {
 }
 
 .social-container img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
