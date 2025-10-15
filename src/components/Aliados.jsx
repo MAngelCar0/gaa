@@ -16,3 +16,5 @@ function Aliados() {
     </section>
   );
 }
+
+export default Aliados

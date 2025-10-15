@@ -1,21 +1,30 @@
+import { Link } from 'react-router-dom'
 import './Header.css'
+
 function Header() {
   return (
     <header className="header">
-      <a className="header-logo" href=""></a>
-      <div className="header-busqueda">
-        <button className="header-buscar"></button>
-        <input className="header-input" type="text" placeholder="bucar producto..."/>
-      </div >
-      <a className="header-user-action" href="">Iniciar sesion</a>
-      <a className="header-user-action" href="">Registrarse</a>
+      <div className="header-top">
+        <Link className="header-logo" to="/">
+          <img src="/Logo.jpg" alt="Logo" />
+        </Link>
+        <div className="header-busqueda">
+          <input className="header-input" type="text" placeholder="buscar producto..." />
+          <button className="header-buscar">Buscar</button>
+        </div>
+        <div className="header-auth">
+          <Link className="header-user-action iniciar" to="/iniciar-sesion">Iniciar sesion</Link>
+          <Link className="header-user-action registrar" to="/registrarse">Registrarse</Link>
+        </div>
+      </div>
       <nav className="header-categorias">
-        <a className="header-categoria" href=""></a>
-        <a className="header-categoria" href=""></a>
-        <a className="header-categoria" href=""></a>
-        <a className="header-categoria" href=""></a>
-        <a className="header-categoria" href=""></a>
-        <a className="header-categoria" href=""></a>
+        <Link className="header-categoria" to="/videojuegos">Videojuegos</Link>
+        <Link className="header-categoria" to="/consolas">Consolas</Link>
+        <Link className="header-categoria" to="/accesorios">Accesorios</Link>
+        <Link className="header-categoria" to="/perifericos">Periféricos</Link>
+        <Link className="header-categoria" to="/figuras">Figuras</Link>
+        <Link className="header-categoria" to="/ropa">Ropa</Link>
+        <Link className="header-categoria" to="/libro-mangas">Libros/Mangas</Link>
       </nav>
     </header>
   )

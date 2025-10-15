@@ -1,4 +1,5 @@
-function VistaProducto({ producto }) {
+import './VistaProducto.css'
+ function VistaProducto () {
     return (
         <section className="vista-producto">
             <div className="miniarura-producto">
