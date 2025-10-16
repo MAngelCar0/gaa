@@ -1,15 +1,19 @@
 import Header from '../components/Header';
 import Productos from '../components/Productos';
+import { Tiendas } from '../components/Tiendas';
 
-function LibrosyMangas() {
+
+
+function LibrosManga() {
   return (
     <>
       <Header />
        <Productos />
        <Productos />
        <Productos />
+       <Tiendas />
     </>
   );
 }
 
-export default LibrosyMangas;
+export default LibrosManga;

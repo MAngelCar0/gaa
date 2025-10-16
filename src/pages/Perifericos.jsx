@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Productos from '../components/Productos';
+import { Tiendas } from '../components/Tiendas';
 
 function Perifericos() {
   return (
@@ -8,6 +9,7 @@ function Perifericos() {
        <Productos />
        <Productos />
        <Productos />
+       <Tiendas />
     </>
   );
 }

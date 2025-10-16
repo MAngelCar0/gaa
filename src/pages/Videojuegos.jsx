@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Productos from '../components/Productos';
+import { Tiendas } from '../components/Tiendas';
 
 function Videojuegos() {
   return (
@@ -8,6 +9,7 @@ function Videojuegos() {
        <Productos />
        <Productos />
        <Productos />
+       <Tiendas />
     </>
   );
 }
