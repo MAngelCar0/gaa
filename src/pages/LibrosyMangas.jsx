@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import Productos from '../components/Productos';
 
-function Figuras() {
+function LibrosyMangas() {
   return (
     <>
       <Header />
@@ -12,4 +12,4 @@ function Figuras() {
   );
 }
 
-export default Figuras;
+export default LibrosyMangas;
