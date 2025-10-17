@@ -2,7 +2,9 @@ import Header from '../components/Header';
 import Productos from '../components/Productos';
 import { Tiendas } from '../components/Tiendas';
 
-function Ropa() {
+
+
+function LibrosManga() {
   return (
     <>
       <Header />
@@ -14,4 +16,4 @@ function Ropa() {
   );
 }
 
-export default Ropa;
+export default LibrosManga;

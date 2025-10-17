@@ -5,6 +5,7 @@ import Consolas from './pages/Consolas';
 import Accesorios from './pages/Accesorios';
 import Figuras from './pages/Figuras';
 import Ropa from './pages/Ropa';
+import LibrosManga from './pages/LibrosManga';
 import Perifericos from './pages/Perifericos';
 import Videojuegos from './pages/Videojuegos';
 import IniciarSesion from './pages/Iniciar-Sesion';
@@ -21,6 +22,7 @@ function App() {
         <Route path="/accesorios" element={<Accesorios />} />
         <Route path="/figuras" element={<Figuras />} />
         <Route path="/ropa" element={<Ropa />} />
+        <Route path="/libro-mangas" element={<LibrosManga />} />
         <Route path="/perifericos" element={<Perifericos />} />
         <Route path="/videojuegos" element={<Videojuegos />} />
         <Route path="/iniciar-sesion" element={<IniciarSesion />} />
