@@ -1,0 +1,587 @@
+:root {
+  --purple-light: #D705F2;
+  --purple-mid: #A904BF;
+  --purple-deep: #660273;
+  --purple-dark: #380140;
+  --purple-black: #220126;
+
+  --blue-dark: #0E3A73;
+  --blue-mid: #0E4473;
+  --blue-deep: #0A2740;
+  --blue-accent: #048ABF;
+  --blue-light: #72E5F2;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, var(--purple-dark), var(--blue-dark));
+  color: var(--blue-light);
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 280px;
+  background-color: var(--purple-black);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-img {
+  width: 160px;
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.mini-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mini-avatar {
+  width: 90px; 
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--purple-light); 
+  box-shadow: 0 0 10px rgba(215, 5, 242, 0.4); 
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.mini-avatar:hover {
+  transform: scale(1.05); 
+}
+
+.mini-avatar:focus {
+  outline: 3px solid rgba(4, 138, 191, 0.6);
+  outline-offset: 4px;
+}
+
+.mini-info h4 {
+  margin: 0;
+  font-size: 1.2rem; 
+  color: var(--blue-light);
+  font-weight: bold;
+}
+
+.mini-info p {
+  margin: 0;
+  font-size: 1rem; 
+  color: var(--blue-accent);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-menu button {
+  background: none;
+  border: none;
+  color: var(--blue-light);
+  font-size: 0.95rem;
+  text-align: left;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.sidebar-menu button:hover {
+  color: var(--purple-light);
+}
+
+.logout {
+  background-color: var(--purple-mid);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.perfil {
+  flex: 1;
+  padding: 2rem;
+}
+
+.perfil h2 {
+  margin-bottom: 1rem;
+  color: var(--purple-light);
+}
+
+.perfil-card {
+  background-color: var(--purple-deep);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(215, 5, 242, 0.3);
+}
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--purple-light);
+}
+
+.perfil-info h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--blue-light);
+}
+
+.perfil-info p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.perfil-secciones {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.perfil-bloque {
+  flex: 1;
+}
+
+.perfil-bloque h4 {
+  margin-bottom: 0.5rem;
+  color: var(--blue-accent);
+}
+
+.perfil-bloque ul {
+  list-style: none;
+  padding: 0;
+}
+
+.perfil-bloque li {
+  background-color: var(--purple-black);
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 0.3rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--blue-light);
+  transition: background 0.3s ease;
+}
+
+.perfil-bloque li:hover {
+  background-color: var(--purple-mid);
+}
+
+.guardar {
+  margin-top: 2rem;
+  background-color: var(--purple-light);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.guardar:hover {
+  background-color: var(--blue-accent);
+}
+.favoritos-lista {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.favorito-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--purple-black);
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.favorito-item:hover {
+  background-color: var(--purple-mid);
+}
+
+.favorito-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  border: 2px solid var(--purple-light);
+}
+
+.favorito-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.favorito-nombre {
+  margin: 0;
+  font-weight: bold;
+  color: var(--blue-light);
+}
+
+.favorito-precio {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--blue-accent);
+}
+
+.ver-producto {
+  background-color: var(--purple-light);
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.ver-producto:hover {
+  background-color: var(--blue-accent);
+}
+.favoritos-lista {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.favorito-item {
+  background-color: #1e1e2f;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.favorito-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.favorito-info {
+  flex: 1;
+}
+
+.favorito-nombre {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.favorito-descripcion {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.favorito-tiendas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.tienda-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #a0c4ff;
+}
+
+.ver-producto {
+  background-color: #7b2cbf;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.ver-producto:hover {
+  background-color: #5a189a;
+}
+
+.favorito-ahorro {
+  color: var(--purple-light);
+  font-weight: bold;
+}
+
+.favorito-acciones {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.favorito-acciones {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ver-producto {
+  background-color: var(--purple-light);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.ver-producto:hover {
+  background-color: var(--blue-accent);
+  transform: scale(1.03);
+}
+
+.favorito-precio {
+  margin-top: 0.5rem;
+}
+
+.favorito-precio strong {
+  color: var(--blue-light);
+}
+
+.favorito-ahorro {
+  color: var(--purple-light);
+  font-weight: bold;
+}
+
+.valoraciones {
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.valoraciones h2 {
+  color: var(--pink-accent);
+  margin-bottom: 1rem;
+}
+
+.valoraciones-lista {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.valoracion-item {
+  background: linear-gradient(to right, #1a1a2e, #16213e);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.valoracion-avatar {
+  background-color: var(--purple-mid);
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 1rem;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.valoracion-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--blue-light);
+}
+
+.valoracion-estrellas {
+  color: #00ffff;
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
+}
+
+.valoracion-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.valoracion-avatar-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.valoracion-avatar-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.general-card {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: var(--purple-deep);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(215, 5, 242, 0.3);
+}
+
+.setting-group {
+  margin-bottom: 1.5rem;
+}
+
+.setting-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--blue-light);
+}
+
+.setting-group input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--purple-black);
+  color: var(--blue-light);
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.setting-group input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--purple-light);
+}
+
+.setting-group button {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--purple-mid);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.setting-group button:hover {
+  background-color: var(--purple-light);
+}
+
+.invite-code {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: var(--blue-accent);
+  font-weight: bold;
+}
+
+.guardar {
+  margin-top: 2rem;
+  background-color: var(--purple-light);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.guardar:hover {
+  background-color: var(--blue-accent);
+}
+
+.general-settings .mini-avatar {
+  margin-top: 1rem;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--purple-light);
+  box-shadow: 0 0 10px rgba(215, 5, 242, 0.4);
+}
+.avatar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.avatar-group label {
+  align-self: flex-start;
+  font-weight: 600;
+  color: var(--blue-light);
+  margin-bottom: 0.5rem;
+}
+
+.mini-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--purple-light);
+  box-shadow: 0 0 10px rgba(215, 5, 242, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.mini-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(215, 5, 242, 0.6);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
