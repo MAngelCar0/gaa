@@ -1,0 +1,188 @@
+.sugerencias {
+  padding: 2rem;
+  width: 85%;
+  max-width: 600px; 
+  margin: 2rem auto 6rem auto;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(to bottom right, #1e1e2e, #2a2a3a);
+  border-radius: 16px;
+  box-shadow: 0 0 24px rgba(160, 32, 240, 0.25);
+  color: #f0f0f0;
+  min-height: 640px; 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sugerencias h2 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  color: #a020f0;
+  text-shadow: 0 0 4px rgba(160, 32, 240, 0.4);
+}
+
+.sugerencias p {
+  margin-bottom: 1.5rem;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.sugerencias textarea {
+  width: 100%;
+  min-height: 280px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #555;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sugerencias textarea:focus {
+  border-color: #a020f0;
+  box-shadow: 0 0 8px rgba(160, 32, 240, 0.4);
+  outline: none;
+}
+
+.sugerencias button {
+  background: #a020f0;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sugerencias form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.sugerencias .form-actions {
+  margin-top: 0.25rem;
+}
+
+.sugerencias button:hover {
+  background: #c04aff;
+  transform: scale(1.03);
+}
+
+.confirmacion {
+  color: #28a745;
+  margin-top: 1rem;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lista-sugerencias {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.sugerencia-item {
+  display: flex;
+  background: linear-gradient(to right, #2a2a2a, #1e1e1e);
+  padding: 1rem 1rem 1.6rem 1rem; /* espacio extra abajo para el botón */
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(160, 32, 240, 0.1);
+  transition: transform 0.2s ease;
+  position: relative;
+}
+
+.sugerencia-item:hover {
+  transform: translateY(-2px);
+}
+
+.sugerencia-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  object-fit: cover;
+  border: 2px solid #a020f0;
+}
+
+.sugerencia-contenido {
+  flex: 1;
+}
+
+.sugerencia-actions {
+  position: absolute;
+  bottom: 8px; /* mover a la parte inferior */
+  right: 8px;
+  display: flex;
+  gap: 0.3rem;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.sugerencia-item:hover .sugerencia-actions {
+  opacity: 1;
+}
+
+.sugerencia-borrar {
+  background: rgba(0,0,0,0.18);
+  color: #ff9b9b;
+  border: 1px solid rgba(255,107,107,0.12);
+  padding: 0.18rem 0.36rem; /* más pequeño */
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.68rem; /* tamaño reducido */
+  line-height: 1;
+}
+
+.sugerencia-borrar:hover {
+  background: rgba(255,107,107,0.06);
+  color: #ff6b6b;
+}
+
+.sugerencia-texto {
+  color: #f0f0f0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.sugerencia-meta {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.logout {
+  background-color: #ff00ff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 0, 255, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.logout:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(255, 0, 255, 0.6);
+}

@@ -1,21 +1,32 @@
-import Carrusel from './components/Carrusel';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Index from './pages/Index';
-import Consolas from './pages/Consolas';
+
+import { ProveedorUsuario } from './pages/ContextoUsuario';
+
 import Accesorios from './pages/Accesorios';
+import Carrusel from './components/Carrusel';
+import CentroAyuda from './pages/CentroAyuda';
+import Consolas from './pages/Consolas';
 import Figuras from './pages/Figuras';
-import Ropa from './pages/Ropa';
+import Favoritos from './pages/Favoritos';
+import Index from './pages/Index';
+import IniciarSesion from './pages/Iniciar-Sesion';
 import LibrosManga from './pages/LibrosManga';
 import Perifericos from './pages/Perifericos';
-import Videojuegos from './pages/Videojuegos';
-import IniciarSesion from './pages/Iniciar-Sesion';
+import PerfilDeUsuario from './pages/PerfilDeUsuario';
 import Registrarse from './pages/Registrarse';
+import Ropa from './pages/Ropa';
+import Sugerencias from './pages/Sugerencias';
+import Valoraciones from './pages/Valoraciones';
+import Videojuegos from './pages/Videojuegos';
+
 import './App.css';
 
 function App() {
 
   return (
     <BrowserRouter>
+      <ProveedorUsuario>
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/consolas" element={<Consolas />} />
@@ -28,7 +39,13 @@ function App() {
         <Route path="/iniciar-sesion" element={<IniciarSesion />} />
         <Route path="/registrarse" element={<Registrarse />} />
         <Route path="/Carrusel" element={<Registrarse />} />
+        <Route path="/perfil" element={<PerfilDeUsuario />} />
+        <Route path="/favoritos" element={<Favoritos />} />
+        <Route path="/valoraciones" element={<Valoraciones />} />
+        <Route path="/ayuda" element={<CentroAyuda />} />
+        <Route path="/sugerencias" element={<Sugerencias />} />
       </Routes>
+      </ProveedorUsuario>
     </BrowserRouter>
   );
 }
