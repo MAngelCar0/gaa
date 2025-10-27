@@ -2,6 +2,7 @@ import Header from '../components/Header';
 import Carrusel from '../components/Carrusel';
 import Productos from '../components/Productos';
 import { Tiendas } from '../components/Tiendas';
+import Footer from '../components/Footer';
 
 function Index() {
   return (
@@ -15,6 +16,7 @@ function Index() {
         
         {/* Agregamos el componente de Tiendas */}
         <Tiendas />
+        <Footer />
       </main>
     </>
   );

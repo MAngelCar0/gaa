@@ -6,11 +6,14 @@ function Header() {
     <header className="header">
       <div className="header-top">
         <Link className="header-logo" to="/">
-          <img src="/Logo.jpg" alt="Logo" />
+          <img src="public/gaa-simple.png" alt="Logo" />
         </Link>
         <div className="header-busqueda">
           <input className="header-input" type="text" placeholder="buscar producto..." />
           <button className="header-buscar">Buscar</button>
+        </div>
+        <div className='header-user'>
+          <img className='header-user-img' src="" alt=""/>
         </div>
         <div className="header-auth">
           <Link className="header-user-action iniciar" to="/iniciar-sesion">Iniciar sesion</Link>

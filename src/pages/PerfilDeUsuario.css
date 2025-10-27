@@ -44,6 +44,7 @@ body {
   max-height: 120px;
   object-fit: contain;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .mini-perfil {

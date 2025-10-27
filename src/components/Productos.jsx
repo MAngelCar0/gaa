@@ -1,5 +1,5 @@
 import './Productos.css'
-import VistaProducto from './VistaProducto' 
+import { Link } from 'react-router-dom'
 
 function Productos({ productos }) {
     // Datos de ejemplo para las tarjetas de juegos mostradas en la imagen
@@ -39,7 +39,12 @@ function Productos({ productos }) {
             {/* Tarjetas destacadas en estilo de la imagen */}
             <div className="tarjetas-container">
                 {tarjetasDestacadas.map((tarjeta) => (
-                    <div key={tarjeta.id} className="tarjeta-destacada">
+                    <Link
+                        key={tarjeta.id}
+                        to={`/producto/${tarjeta.id}`}
+                        state={{ producto: tarjeta }}
+                        className="tarjeta-destacada"
+                    >
                         <div className="tarjeta-imagen">
                             <img src={tarjeta.imagen} alt={tarjeta.titulo} />
                         </div>
@@ -47,7 +52,7 @@ function Productos({ productos }) {
                             <h3 className="tarjeta-titulo">{tarjeta.titulo}</h3>
                             <p className="tarjeta-descripcion">{tarjeta.descripcion}</p>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
 
