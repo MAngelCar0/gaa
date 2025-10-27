@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Form-loging {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #3a0a3a;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.Form-loging-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #bffcff;
+  text-shadow: 0 0 5px rgba(191, 252, 255, 0.3);
+}
+
+.Form-loging-form {
+  width: 100%;
+  padding: 42px 10px;
+  margin-bottom: 20px;
+  background-color: #2a002a;
+  border: 1px solid #5c2e5c;
+  border-radius: 5px;
+  color: #bffcff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.Form-loging-form:focus {
+  outline: none;
+  border-color: #bffcff;
+  box-shadow: 0 0 8px rgba(191, 252, 255, 0.5);
+}
+
+.Form-loging-form::placeholder {
+  color: #8a7a8a;
+}
+
+.Form-loging-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  background-color: #2a002a;
+  border: 1px solid #5c2e5c;
+  border-radius: 8px;
+  margin-top: 10px;
+  color: #bffcff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.Form-loging-input:focus {
+  outline: none;
+  border-color: #bffcff;
+  box-shadow: 0 0 8px rgba(191, 252, 255, 0.5);
+}
+
+.Form-loging-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #5e0a5e;
+  border: none;
+  border-radius: 5px;
+  color: #bffcff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.Form-loging-button:hover {
+  background-color: #7a0a7a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Form-loging-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.Form-loging-redes {
+  margin: 25px 0;
+  text-align: center;
+  padding: 15px 0;
+  border-top: 1px solid #5c2e5c;
+  border-bottom: 1px solid #5c2e5c;
+  font-size: 1.1rem;
+  color: #bffcff;
+  margin-bottom: 15px;
+}
+
+.Form-loging-redes img {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1rem;
+  color: #bffcff;
+  transition: color 0.3s ease;
+}
+
+.Form-loging-redes img:hover {
+  color: #ffffff;
+}
+
+.Form-loging-button {
+  width: 100%;
+  height: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.Form-loging-recuperar {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.Form-loging-registrar {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}

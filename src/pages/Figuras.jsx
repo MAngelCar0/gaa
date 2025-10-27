@@ -1,6 +1,8 @@
 import Header from '../components/Header';
 import Productos from '../components/Productos';
 import { Tiendas } from '../components/Tiendas';
+import Footer from '../components/Footer';
+
 
 function Figuras() {
   return (
@@ -10,6 +12,7 @@ function Figuras() {
        <Productos />
        <Productos />
        <Tiendas />
+       <Footer />
     </>
   );
 }

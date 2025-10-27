@@ -5,6 +5,7 @@ import { ContextoUsuario } from './ContextoUsuario';
 
 import './Registrarse.css';
 
+/* Datos del usuario */
 function Registrarse() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -15,27 +16,33 @@ function Registrarse() {
   const navigate = useNavigate();
   const { setDatos, setAvatar } = useContext(ContextoUsuario);
 
+  /* Se ejecuta cuando envian el formulario y valida los datos */
   const onSubmit = (e) => {
     e.preventDefault();
     setError(null);
     if (!agree) return setError('Debes aceptar los términos');
     if (password !== confirm) return setError('Las contraseñas no coinciden');
 
+    /* Sirve para que no se pueda crear el mismo usuario 2 veces */
     const usuariosJSON = localStorage.getItem('users');
     const usuarios = usuariosJSON ? JSON.parse(usuariosJSON) : [];
     if (usuarios.some(u => u.email === email)) return setError('Ya existe una cuenta con ese correo');
 
+    /* Crea un nuevo usuario y lo agrega al array de usuarios */
     const nuevo = { name, email, password, avatar: '/Logo.jpg' };
     usuarios.push(nuevo);
     localStorage.setItem('users', JSON.stringify(usuarios));
 
+    /* Guardar los datos del usuario en el localStorage */
     const datosUsuario = { nombre: name, email };
     localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario));
     localStorage.setItem('avatarUsuario', nuevo.avatar);
 
+    /* Guardar los datos del usuario en el contexto */
     if (setDatos) setDatos(datosUsuario);
     if (setAvatar) setAvatar(nuevo.avatar);
-
+    
+    /* Redirige al perfil del usuario */
     navigate('/perfil');
   };
 

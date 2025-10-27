@@ -85,3 +85,10 @@
     font-size: 10px;
   }
 }
+
+.tiedas-separador {
+  width: 100%;
+  height: 2px;
+  background-color: #380140;
+  margin: 40px 0;
+}

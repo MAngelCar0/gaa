@@ -27,6 +27,7 @@ import './Tiendas.css';
           </div>
         ))}
       </div>
+      <div className='tiedas-separador'></div>
     </section>
   );
 };

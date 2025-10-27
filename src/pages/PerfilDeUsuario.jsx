@@ -39,8 +39,7 @@ const PerfilDeUsuario = () => {
     <div className="dashboard">
       <aside className="sidebar">
         <div className="logo-container">
-          <img src="/Logo.jpg" alt="Logo" className="logo-img" />
-
+          <img src="/Logo.jpg" alt="Logo" className="logo-img" onClick={() => navigate('/')} />
           <div className="mini-perfil">
             {avatar && (
               <img

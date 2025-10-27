@@ -1,6 +1,9 @@
 import Header from '../components/Header';
 import Productos from '../components/Productos';
 import { Tiendas } from '../components/Tiendas';
+import Footer from '../components/Footer';
+
+
 
 function Videojuegos() {
   return (
@@ -10,6 +13,7 @@ function Videojuegos() {
        <Productos />
        <Productos />
        <Tiendas />
+       <Footer />
     </>
   );
 }
