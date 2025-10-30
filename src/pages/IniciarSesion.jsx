@@ -40,7 +40,6 @@ function IniciarSesion() {
 
   return (
     <>
-      <Header />
       <main className="Form-loging">
         <h2 className="Form-loging-title">Iniciar Sesión</h2>
         <form className="Form-loging-form" onSubmit={onSubmit}>
