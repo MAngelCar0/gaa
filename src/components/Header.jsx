@@ -1,25 +1,57 @@
-import { Link } from 'react-router-dom'
-import './Header.css'
+import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { ContextoUsuario } from '../pages/ContextoUsuario';
+import './Header.css';
 
 function Header() {
+  const { datos, avatar } = useContext(ContextoUsuario);
+  const navigate = useNavigate();
+
+  const handleAvatarClick = () => {
+    navigate('/perfil');
+  };
+
   return (
     <header className="header">
       <div className="header-top">
-        <Link className="header-logo" to="/">
-          <img src="public/gaa-simple.png" alt="Logo" />
-        </Link>
+        <div className="header-logo-container">
+          <Link className="header-logo" to="/">
+            <img src="public/gaa-simple.png" alt="Logo" />
+          </Link>
+        </div>
+
         <div className="header-busqueda">
-          <input className="header-input" type="text" placeholder="buscar producto..." />
+          <input
+            className="header-input"
+            type="text"
+            placeholder="Buscar producto..."
+          />
           <button className="header-buscar">Buscar</button>
         </div>
-        <div className='header-user'>
-          <img className='header-user-img' src="" alt=""/>
-        </div>
-        <div className="header-auth">
-          <Link className="header-user-action iniciar" to="/iniciar-sesion">Iniciar sesion</Link>
-          <Link className="header-user-action registrar" to="/registrarse">Registrarse</Link>
+
+        <div className="header-user">
+          {datos?.nombre ? (
+            <div className="header-user-info" onClick={handleAvatarClick}>
+              <img
+                className="header-user-img"
+                src={avatar || '/Logo.jpg'}
+                alt="Avatar"
+              />
+              <span className="header-user-name">{datos.nombre}</span>
+            </div>
+          ) : (
+            <div className="header-auth">
+              <Link className="header-user-action iniciar" to="/iniciar-sesion">
+                Iniciar sesión
+              </Link>
+              <Link className="header-user-action registrar" to="/registrarse">
+                Registrarse
+              </Link>
+            </div>
+          )}
         </div>
       </div>
+
       <nav className="header-categorias">
         <Link className="header-categoria" to="/videojuegos">Videojuegos</Link>
         <Link className="header-categoria" to="/consolas">Consolas</Link>
@@ -30,7 +62,7 @@ function Header() {
         <Link className="header-categoria" to="/libro-mangas">Libros/Mangas</Link>
       </nav>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;
