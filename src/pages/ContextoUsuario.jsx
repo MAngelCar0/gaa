@@ -1,6 +1,6 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect } from 'react';
 
-export const ContextoUsuario = createContext()
+export const ContextoUsuario = createContext();
 
 export const ProveedorUsuario = ({ children }) => {
   const [datos, setDatos] = useState({});
@@ -39,4 +39,3 @@ export const ProveedorUsuario = ({ children }) => {
     </ContextoUsuario.Provider>
   );
 };
-

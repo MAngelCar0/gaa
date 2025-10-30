@@ -1,105 +1,108 @@
-import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { ContextoUsuario } from "./ContextoUsuario";
+import "./Registrarse.css";
+import Header from "../components/Header";
+import PantallaCarga from "../components/PantallaCarga";
 
-import { ContextoUsuario } from './ContextoUsuario';
-
-import './Registrarse.css';
-
-/* Datos del usuario */
 function Registrarse() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirm, setConfirm] = useState('');
-  const [agree, setAgree] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { setDatos, setAvatar } = useContext(ContextoUsuario);
 
-  /* Se ejecuta cuando envian el formulario y valida los datos */
-  const onSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setError(null);
-    if (!agree) return setError('Debes aceptar los términos');
-    if (password !== confirm) return setError('Las contraseñas no coinciden');
+    setLoading(true);
 
-    /* Sirve para que no se pueda crear el mismo usuario 2 veces */
-    const usuariosJSON = localStorage.getItem('users');
-    const usuarios = usuariosJSON ? JSON.parse(usuariosJSON) : [];
-    if (usuarios.some(u => u.email === email)) return setError('Ya existe una cuenta con ese correo');
+    setTimeout(() => {
+      if (password !== confirmPassword) {
+        setError("Las contraseñas no coinciden");
+        setLoading(false);
+        return;
+      }
 
-    /* Crea un nuevo usuario y lo agrega al array de usuarios */
-    const nuevo = { name, email, password, avatar: '/Logo.jpg' };
-    usuarios.push(nuevo);
-    localStorage.setItem('users', JSON.stringify(usuarios));
+      const usuariosJSON = localStorage.getItem("users");
+      const usuarios = usuariosJSON ? JSON.parse(usuariosJSON) : [];
 
-    /* Guardar los datos del usuario en el localStorage */
-    const datosUsuario = { nombre: name, email };
-    localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario));
-    localStorage.setItem('avatarUsuario', nuevo.avatar);
+      const existe = usuarios.find((u) => u.email === email);
+      if (existe) {
+        setError("Este correo ya está registrado");
+        setLoading(false);
+        return;
+      }
 
-    /* Guardar los datos del usuario en el contexto */
-    if (setDatos) setDatos(datosUsuario);
-    if (setAvatar) setAvatar(nuevo.avatar);
-    
-    /* Redirige al perfil del usuario */
-    navigate('/perfil');
+      const nuevoUsuario = { name, email, password, avatar: null };
+      usuarios.push(nuevoUsuario);
+      localStorage.setItem("users", JSON.stringify(usuarios));
+
+      const datosUsuario = { nombre: name, email };
+      localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
+
+      if (setDatos) setDatos(datosUsuario);
+      if (setAvatar) setAvatar(null);
+
+      setTimeout(() => {
+        setLoading(false);
+        navigate("/");
+      }, 1000);
+    }, 1500);
   };
 
   return (
     <>
-      <main className="form-container">
-        <h2 className="form-title">Registrarse</h2>
-        <form onSubmit={onSubmit}>
+      {loading && <PantallaCarga />}
+      <Header />
+      <main className="Form-loging">
+        <h2 className="Form-loging-title">Registrarse</h2>
+
+        <form onSubmit={handleSubmit}>
           <input
-            className="form-input"
+            className="Form-loging-input"
             type="text"
-            placeholder="Nombre de Usuario"
+            placeholder="Nombre completo"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
+
           <input
-            className="form-input"
+            className="Form-loging-input"
             type="email"
             placeholder="Correo electrónico"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+
           <input
-            className="form-input"
+            className="Form-loging-input"
             type="password"
             placeholder="Contraseña"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+
           <input
-            className="form-input"
+            className="Form-loging-input"
             type="password"
             placeholder="Confirmar contraseña"
-            value={confirm}
-            onChange={(e) => setConfirm(e.target.value)}
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
-          <section className="form-redes">
-            <h3 className="form-redes-title">Registrarse con redes sociales</h3>
-            <div className="form-redes-icons">
-              <i className="fab fa-facebook-f"></i>
-              <i className="fab fa-twitter"></i>
-              <i className="fab fa-instagram"></i>
-            </div>
-          </section>
-          <p className="form-agreement">
-            Al registrarte, aceptas nuestras <a href="/terminos">condiciones de uso</a> y <a href="/privacidad">política de privacidad</a>.
-          </p>
-          <label className="form-checkbox">
-            <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
-            Aceptar términos y condiciones
-          </label>
-          {error && <p style={{ color: 'salmon' }}>{error}</p>}
-          <button className="form-button" type="submit">Crear cuenta</button>
+
+          <button className="Form-loging-button" type="submit">
+            Crear cuenta
+          </button>
+
+          {error && <p style={{ color: "salmon", textAlign: "center" }}>{error}</p>}
         </form>
       </main>
     </>
