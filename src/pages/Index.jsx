@@ -3,6 +3,8 @@ import Carrusel from '../components/Carrusel';
 import Productos from '../components/Productos';
 import { Tiendas } from '../components/Tiendas';
 import Footer from '../components/Footer';
+import IniciarSesion from '../pages/IniciarSesion';
+import Registrarse from '../pages/Registrarse';
 
 function Index() {
   return (

@@ -6,13 +6,32 @@
 
 .Form-loging {
   width: 100%;
-  max-width: 400px; /* antes 600px */
+  max-width: 650px; /* antes 600px */
   margin: 50px auto;
   padding: 30px;     /* antes 40px */
   background-color: #3a0a3a;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
+.Form-loging-logo {
+  width: 240px;
+  height: auto;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}
+
+.Form-loging-logo img {
+  width: 50%;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: contain;
+  margin-left: 8rem;
+  margin-bottom: 1rem;
+}
+
+
 
 .Form-loging-title {
   font-size: 2rem;
@@ -23,9 +42,10 @@
 }
 
 .Form-loging-input {
-  width: 100%;
+  width: 80%;
   padding: 12px 15px;
   margin-bottom: 20px;
+  margin-left: 3.4rem;
   background-color: #2a002a;
   border: 1px solid #5c2e5c;
   border-radius: 8px;
