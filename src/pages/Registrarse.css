@@ -8,12 +8,22 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.form-title {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 30px;
-  color: #bffcff;
-  text-shadow: 0 0 5px rgba(191, 252, 255, 0.3);
+.Form-registro-logo  {
+
+  border-radius: 8px;
+  object-fit: contain;
+  margin: 0 auto 1rem auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Form-registro-logo img {
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .form-input {
