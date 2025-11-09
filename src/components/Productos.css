@@ -1,193 +1,172 @@
-.producto-card{
-    width: 22%;
-    min-width: 250px;
-    height: auto;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Tarjetas de productos cargadas desde JSON */
+.producto-card {
+  width: 22%;
+  min-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.productos-producto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-.productos-producto-card img {    
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border: none;
-    transition: transform 0.3s ease;
+.producto-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border: none;
+  transition: transform 0.3s ease;
 }
 
-.productos-producto-card h2 {
-    width: 90%;
-    margin: 15px auto;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #333;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
+.producto-card h2 {
+  width: 90%;
+  margin: 15px auto;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
-.productos-producto-card a {          
-    display: inline-block;
-    width: auto;
-    min-width: 100px;
-    margin: 10px 5% 15px auto;
-    text-align: center;
-    background-color: #333;
-    color: #ffffff;
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    float: right;
+.producto-card a {
+  display: inline-block;
+  width: auto;
+  min-width: 100px;
+  margin: 10px 5% 15px auto;
+  text-align: center;
+  background-color: #333;
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  float: right;
 }
 
-.productos-producto-card a:hover {
-    background-color: #555;
+.producto-card a:hover {
+  background-color: #555;
 }
 
-/* Estilos para las tarjetas destacadas */
+/* Tarjetas destacadas */
 .tarjetas-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .tarjeta-destacada {
-    width: calc(25% - 15px);
-    min-width: 250px;
-    background-color: #000;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
-    margin-bottom: 20px;
-    position: relative;
+  width: calc(25% - 15px);
+  min-width: 250px;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  margin-bottom: 0;
 }
 
 .tarjeta-destacada::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #ff00cc, #9933ff, #3366ff);
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff00cc, #9933ff, #3366ff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .tarjeta-destacada:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(153, 51, 255, 0.5);
-}
-
-.tarjeta-imagen {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    position: relative;
-}
-
-.tarjeta-imagen img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease, filter 0.5s ease;
-}
-
-.tarjeta-destacada:hover .tarjeta-imagen img {
-    transform: scale(1.05);
-}
-
-.tarjeta-destacada::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, rgba(255,0,204,1) 0%, rgba(153,51,255,1) 50%, rgba(51,102,255,1) 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(153, 51, 255, 0.5);
 }
 
 .tarjeta-destacada:hover::after {
-    opacity: 1;
+  opacity: 1;
 }
 
 .tarjeta-destacada::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 10px;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    box-shadow: 0 0 30px 5px rgba(153, 51, 255, 0.7);
-    pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 30px 5px rgba(153, 51, 255, 0.7);
+  pointer-events: none;
 }
 
 .tarjeta-destacada:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 
-@keyframes cardGlow {
-    0% {
-        opacity: 0.3;
-        background-position: 0% 0%;
-    }
-    100% {
-        opacity: 0.7;
-        background-position: 100% 100%;
-    }
+.tarjeta-imagen {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tarjeta-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.tarjeta-destacada:hover .tarjeta-imagen img {
+  transform: scale(1.05);
 }
 
 .tarjeta-contenido {
-    padding: 15px;
-    color: white;
+  padding: 15px;
+  color: white;
 }
 
 .tarjeta-titulo {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .tarjeta-descripcion {
-    font-size: 14px;
-    line-height: 1.4;
-    opacity: 0.8;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0.8;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Responsive para tarjetas destacadas */
 @media (max-width: 1100px) {
-    .tarjeta-destacada {
-        width: calc(50% - 10px);
-    }
+  .tarjeta-destacada {
+    width: calc(50% - 10px);
+  }
 }
 
 @media (max-width: 600px) {
-    .tarjeta-destacada {
-        width: 100%;
-    }
+  .tarjeta-destacada {
+    width: 100%;
+  }
 }

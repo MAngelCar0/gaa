@@ -3,19 +3,41 @@ import React, { createContext, useState, useEffect } from 'react';
 export const ContextoUsuario = createContext();
 
 export const ProveedorUsuario = ({ children }) => {
-  const [datos, setDatos] = useState({});
-  const [avatar, setAvatar] = useState(null);
+  const [datos, setDatos] = useState(() => {
+    try {
+      const guardados = localStorage.getItem('datosUsuario');
+      return guardados ? JSON.parse(guardados) : {};
+    } catch (err) {
+      console.error('Error al cargar datosUsuario:', err);
+      return {};
+    }
+  });
 
+  const [avatar, setAvatar] = useState(() => {
+    return localStorage.getItem('avatarUsuario') || null;
+  });
+
+  // 🔹 Guarda automáticamente los datos cuando cambian
   useEffect(() => {
-    const datosGuardados = localStorage.getItem('datosUsuario');
-    const avatarGuardado = localStorage.getItem('avatarUsuario');
-    if (datosGuardados) setDatos(JSON.parse(datosGuardados));
-    if (avatarGuardado) setAvatar(avatarGuardado);
-  }, []);
+    try {
+      localStorage.setItem('datosUsuario', JSON.stringify(datos));
+    } catch (err) {
+      console.error('Error guardando datosUsuario:', err);
+    }
+  }, [datos]);
 
+  // 🔹 Guarda o elimina el avatar según corresponda
+  useEffect(() => {
+    if (avatar) {
+      localStorage.setItem('avatarUsuario', avatar);
+    } else {
+      localStorage.removeItem('avatarUsuario');
+    }
+  }, [avatar]);
+
+  // 🔹 Escucha cambios desde otras pestañas
   useEffect(() => {
     const onStorage = (e) => {
-      if (!e.key) return;
       if (e.key === 'datosUsuario') {
         try {
           const nuevo = JSON.parse(e.newValue || '{}');
@@ -23,8 +45,7 @@ export const ProveedorUsuario = ({ children }) => {
         } catch (err) {
           console.error('Error parseando datosUsuario desde storage event', err);
         }
-      }
-      if (e.key === 'avatarUsuario') {
+      } else if (e.key === 'avatarUsuario') {
         setAvatar(e.newValue || null);
       }
     };

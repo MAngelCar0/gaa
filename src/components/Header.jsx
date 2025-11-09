@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { ContextoUsuario } from '../pages/ContextoUsuario';
 import './Header.css';
@@ -16,7 +16,7 @@ function Header() {
       <div className="header-top">
         <div className="header-logo-container">
           <Link className="header-logo" to="/">
-            <img src="public/gaa-simple.png" alt="Logo" />
+            <img src="./public/logo.png" alt="Logo" />
           </Link>
         </div>
 

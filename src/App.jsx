@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProveedorUsuario } from "./pages/ContextoUsuario";
+import Footer from "./components/Footer";
 
 import Accesorios from "./pages/Accesorios";
 import Carrusel from "./components/Carrusel";
@@ -18,7 +19,6 @@ import Ropa from "./pages/Ropa";
 import Sugerencias from "./pages/Sugerencias";
 import Valoraciones from "./pages/Valoraciones";
 import Videojuegos from "./pages/Videojuegos";
-import VistaProducto from "./components/VistaProducto";
 
 import "./App.css";
 
@@ -35,7 +35,6 @@ function App() {
           <Route path="/libro-mangas" element={<LibrosManga />} />
           <Route path="/perifericos" element={<Perifericos />} />
           <Route path="/videojuegos" element={<Videojuegos />} />
-          <Route path="/producto/:id" element={<VistaProducto />} />
           <Route path="/iniciar-sesion" element={<IniciarSesion />} />
           <Route path="/registrarse" element={<Registrarse />} />
           <Route path="/Carrusel" element={<Carrusel />} />
@@ -45,6 +44,7 @@ function App() {
           <Route path="/ayuda" element={<CentroAyuda />} />
           <Route path="/sugerencias" element={<Sugerencias />} />
         </Routes>
+        <Footer />
       </ProveedorUsuario>
     </BrowserRouter>
   );

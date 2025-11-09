@@ -7,11 +7,11 @@ import { Navigation, Pagination } from 'swiper/modules';
 import { useState, useEffect, useRef } from 'react';
 import './Carrusel.css';
 
-// Use public files (URL-encode filenames with spaces)
+// Use public files
 const images = [
   '/Logo.jpg',
   '/vite.svg',
-  '/extraer%20o%20generar%20un.png'
+  '/extraer o generar un.png'
 ];
 
 export default function Carrusel() {
