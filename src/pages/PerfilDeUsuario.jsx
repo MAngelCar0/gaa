@@ -65,7 +65,7 @@ const PerfilDeUsuario = () => {
       <aside className="sidebar">
         <div className="logo-container">
           <img
-            src="./public/logo.png"
+            src="/logo.1.png"
             alt="Logo"
             className="logo-img"
             onClick={() => navigate('/')}

@@ -4,6 +4,8 @@
   text-align: center;
   width: 100%;
   margin-bottom: 0;
+  position: sticky;
+  top: 0;
 }
 
 .tiendas-container {
