@@ -1,62 +1,102 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.footer {
+  background: #121212;
+  color: #ccc;
+  padding: 30px 20px;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 0;
 }
 
-.footer{
-    width: 100%;
-    height: 400px;
-    background-color: #121212;
-    color: #bffcff;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
+.footer-heading {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
-.footer-section{
-    width: 50%;
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10rem;
-    margin-bottom: 3rem;
-    margin-left: 17rem;
+.footer-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
 }
 
-.footer-title{
-    font-size: 24px;
-    font-weight: bold;
-    
+.footer-logo-item {
+  width: 80px;
+  height: 80px;
+  background: #1a1a1a;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
 }
 
-.footer-text{
-    font-size: 16px;
-    margin-bottom: 5px;
-    cursor: pointer;
+.footer-logo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 6px;
+  border: none;
+  outline: none;
 }
 
-.footer-span{
-    font-size: 16px;
-    margin-bottom: 5px;
+.footer-logo-item span {
+  font-size: 0.7rem;
+  color: #ccc;
+  margin-top: 4px;
 }
 
-.footer-icon{
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
 }
 
-.footer-section p{
-    font-size: 16px;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    transform: translateY(0.5rem);
-    color: #00f6ff;
-    font-weight: bold;
+.footer-column h4 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.footer-column a,
+.footer-column p {
+  color: #ccc;
+  text-decoration: none;
+  margin: 4px 0;
+  display: block;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  filter: brightness(0.8);
+  transition: filter 0.3s;
+}
+
+.icon:hover {
+  filter: brightness(1);
+}
+
+/* Puedes usar clases como .discord, .twitter, .instagram con background-image */
+.footer-copy {
+  color: #666;
+  font-size: 0.75rem;
+  margin-top: 10px;
 }

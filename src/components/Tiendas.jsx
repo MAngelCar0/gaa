@@ -1,7 +1,7 @@
 import React from 'react';
 import './Tiendas.css';
 
- export const Tiendas = () => {
+export const Tiendas = () => {
   const tiendas = [
     { id: 1, nombre: 'CoachTravel', imagen: '/CoachTravel.png' },
     { id: 2, nombre: 'FOTOCAL', imagen: '/FOTOCAL.png' },
@@ -16,7 +16,6 @@ import './Tiendas.css';
 
   return (
     <section className="tiendas-section">
-      <h2 className="tiendas-titulo">Lo Que Puedes Encontrar</h2>
       <div className="tiendas-container">
         {tiendas.map((tienda) => (
           <div key={tienda.id} className="tienda-item">
@@ -27,8 +26,6 @@ import './Tiendas.css';
           </div>
         ))}
       </div>
-      <div className='tiedas-separador'></div>
     </section>
   );
 };
-

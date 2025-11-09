@@ -1,7 +1,6 @@
 import Header from '../components/Header';
 import Productos from '../components/Productos';
 import { Tiendas } from '../components/Tiendas';
-import Footer from '../components/Footer';
 
 function Consolas() {
   return (
@@ -12,7 +11,6 @@ function Consolas() {
        <Productos />
        <Productos />
        <Tiendas />
-       <Footer />
     </>
   );
 }
