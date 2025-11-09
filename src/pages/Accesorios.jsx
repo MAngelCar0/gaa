@@ -7,16 +7,22 @@ function Accesorios() {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    fetch('/JSON/accesorios/accesorios.json')
-      .then(res => res.json())
-      .then(data => setProductos(data))
+    Promise.all([
+      fetch('/JSON/accesorios/accesorios.json').then(res => res.json()),
+      fetch('/JSON/accesorios/accesorios1.json').then(res => res.json()),
+      fetch('/JSON/accesorios/accesorios2.json').then(res => res.json())
+    ])
+      .then(([data1, data2, data3]) => {
+        const todosLosProductos = [...data1, ...data2, ...data3];
+        setProductos(todosLosProductos);
+      })
       .catch(err => console.error('Error al cargar accesorios:', err));
   }, []);
 
   return (
     <>
       <Header />
-      <Productos items={productos} />
+      <Productos productos={productos} />
       <Tiendas />
     </>
   );
