@@ -14,7 +14,10 @@ function Accesorios() {
     ])
       .then(([data1, data2, data3]) => {
         const todosLosProductos = [...data1, ...data2, ...data3];
-        setProductos(todosLosProductos);
+
+        const productosMezclados = todosLosProductos .sort(() => Math.random() - 0.5);
+
+        setProductos(productosMezclados);
       })
       .catch(err => console.error('Error al cargar accesorios:', err));
   }, []);

@@ -73,18 +73,13 @@ const PerfilDeUsuario = () => {
           />
 
           {/* --- Mini perfil superior --- */}
-          <div className="mini-perfil" onClick={() => setVistaActiva('perfil')}>
-            <AvatarSeguro src={avatar} alt="Avatar" clase="mini-avatar" />
-
-          <img src="/public/gaa-simple.png" alt="Logo" className="logo-img" onClick={() => navigate('/')} />
           <div className="mini-perfil">
-            {avatar && (
+            {avatar ? (
               <img
                 src={avatar}
                 alt="Avatar"
                 className="mini-avatar"
                 onClick={() => {
-                  // Navigate to profile summary (don't open the General settings panel)
                   setVistaActiva('perfil');
                   navigate('/perfil');
                 }}
@@ -97,7 +92,10 @@ const PerfilDeUsuario = () => {
                   }
                 }}
               />
+            ) : (
+              <AvatarSeguro src={avatar} alt="Avatar" clase="mini-avatar" />
             )}
+
             <div className="mini-info">
               <h4>{datos.nombre || datos.username || 'Usuario'}</h4>
               <p>@{datos.username || 'sin_usuario'}</p>
