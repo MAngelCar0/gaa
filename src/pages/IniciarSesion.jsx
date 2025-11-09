@@ -1,8 +1,12 @@
+
 /*import React, { useContext, useState } from "react";*/
 import {  useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { ContextoUsuario } from "./ContextoUsuario";
 import "./IniciarSesion.css";
 import Header from "../components/Header";
+import Index from "../pages/Index";
 import PantallaCarga from "../components/PantallaCarga";
 
 function IniciarSesion() {
@@ -50,11 +54,11 @@ function IniciarSesion() {
 
   return (
     <>
-      {loading && <PantallaCarga />}
-      <Header />
       <main className="Form-loging">
+        <Link className="Form-loging-logo" to="/">
+          <img src="/gaa-simple.png" alt="Logo GAA" />
+        </Link>
         <h2 className="Form-loging-title">Iniciar Sesión</h2>
-
         <form onSubmit={onSubmit}>
           <input
             className="Form-loging-input"
@@ -75,9 +79,9 @@ function IniciarSesion() {
 
           <div className="Form-loging-redes">
             <p>Inicia sesión con</p>
-            <img src="/facebook.png" alt="Facebook" />
-            <img src="/twitter.png" alt="Twitter" />
-            <img src="/instagram.png" alt="Instagram" />
+            <span style={{ color: '#bffcff', fontSize: '1.5rem' }}>📘</span>
+            <span style={{ color: '#bffcff', fontSize: '1.5rem' }}>🐦</span>
+            <span style={{ color: '#bffcff', fontSize: '1.5rem' }}>📷</span>
           </div>
 
           <p className="Form-loging-recuperar">

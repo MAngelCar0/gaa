@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ContextoUsuario } from "./ContextoUsuario";
 import "./Registrarse.css";
 import Header from "../components/Header";
@@ -57,8 +57,10 @@ function Registrarse() {
   return (
     <>
       {loading && <PantallaCarga />}
-      <Header />
       <main className="Form-loging">
+        <Link className="Form-registro-logo" to="/">
+          <img src="/gaa-simple.png" alt="Logo GAA" />
+        </Link>
         <h2 className="Form-loging-title">Registrarse</h2>
 
         <form onSubmit={handleSubmit}>
