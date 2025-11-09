@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProveedorUsuario } from "./pages/ContextoUsuario";
+ EstebanGomezGomez
 import Footer from "./components/Footer";
-
+ master
 import Accesorios from "./pages/Accesorios";
 import Carrusel from "./components/Carrusel";
 import CentroAyuda from "./pages/CentroAyuda";
