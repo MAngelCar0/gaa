@@ -51,7 +51,7 @@ function IniciarSesion() {
     <>
       <main className="Form-loging">
         <Link className="Form-loging-logo" to="/">
-          <img src="/logo.png" alt="Logo GAA" />
+          <img src="/logo.1.png" alt="Logo GAA" />
         </Link>
         <h2 className="Form-loging-title">Iniciar Sesión</h2>
         <form onSubmit={onSubmit}>

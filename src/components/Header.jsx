@@ -16,10 +16,9 @@ function Header() {
       <div className="header-top">
         <div className="header-logo-container">
           <Link className="header-logo" to="/">
-            <img src="./public/logo.png" alt="Logo" />
+            <img src="/logo.1.png" alt="Logo" />
           </Link>
         </div>
-
         <div className="header-busqueda">
           <input
             className="header-input"
@@ -34,7 +33,7 @@ function Header() {
             <div className="header-user-info" onClick={handleAvatarClick}>
               <img
                 className="header-user-img"
-                src={avatar || '/Logo.jpg'}
+                src={avatar || '/logo.1.png'}
                 alt="Avatar"
               />
               <span className="header-user-name">{datos.nombre}</span>
@@ -51,7 +50,6 @@ function Header() {
           )}
         </div>
       </div>
-
       <nav className="header-categorias">
         <Link className="header-categoria" to="/videojuegos">Videojuegos</Link>
         <Link className="header-categoria" to="/consolas">Consolas</Link>

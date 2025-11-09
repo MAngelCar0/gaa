@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className="footer-copy">© 2025 Studio. Todos los derechos reservados.</p>
+      <p className="footer-copy">© 2025 Studio GAA. Todos los derechos reservados.</p>
     </footer>
   );
 };
