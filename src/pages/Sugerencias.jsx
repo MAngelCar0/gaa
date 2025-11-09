@@ -59,7 +59,7 @@ const Sugerencias = () => {
     <div className="dashboard">
       <aside className="sidebar">
         <div className="logo-container">
-          <h1 className="logo-text">GAA</h1>
+          <img src="/logo.1.png" alt="Logo" className="logo-img" />
 
           <div className="mini-perfil">
             <img 

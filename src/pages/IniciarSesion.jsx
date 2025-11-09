@@ -4,9 +4,6 @@ import React, { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { ContextoUsuario } from "./ContextoUsuario";
 import "./IniciarSesion.css";
-import Header from "../components/Header";
-import Index from "../pages/Index";
-import PantallaCarga from "../components/PantallaCarga";
 
 function IniciarSesion() {
   const [email, setEmail] = useState("");
@@ -55,7 +52,7 @@ function IniciarSesion() {
     <>
       <main className="Form-loging">
         <Link className="Form-loging-logo" to="/">
-          <img src="/gaa-simple.png" alt="Logo GAA" />
+          <img src="/logo.1.png" alt="Logo GAA" />
         </Link>
         <h2 className="Form-loging-title">Iniciar Sesión</h2>
         <form onSubmit={onSubmit}>

@@ -9,7 +9,7 @@ import './Carrusel.css';
 
 // Use public files
 const images = [
-  '/Logo.jpg',
+  '/logo.1.png',
   '/vite.svg',
   '/extraer o generar un.png'
 ];

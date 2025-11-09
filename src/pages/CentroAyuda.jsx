@@ -47,7 +47,7 @@ const CentroAyuda = () => {
     <div className="dashboard">
       <aside className="sidebar">
         <div className="logo-container">
-          <img src="/gaa-simple.png" alt="Logo" className="logo-img" />
+          <img src="/logo.1.png" alt="Logo" className="logo-img" />
 
           <div className="mini-perfil">
             {avatar && <img 

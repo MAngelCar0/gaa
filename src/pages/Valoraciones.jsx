@@ -36,15 +36,14 @@ export default function Valoraciones() {
     <div className="dashboard">
       <aside className="sidebar">
         <div className="logo-container">
-          <img src="/Logo.jpg" alt="Logo" className="logo-img" />
+          <img src="/logo.1.png" alt="Logo" className="logo-img" />
           <div className="mini-perfil">
-            <img 
-              src={avatarSrc} 
-              alt="Avatar" 
-              className="mini-avatar" 
-              onClick={() => navigate('/perfil')}
-              style={{ cursor: 'pointer' }}
-            />
+            <img src={avatarSrc} 
+                alt="Avatar" 
+                className="mini-avatar" 
+                onClick={() => navigate('/perfil')}
+                style={{ cursor: 'pointer' }}
+              />
             <div className="mini-info">
               <h4>{nombre}</h4>
               <p>@{username}</p>
