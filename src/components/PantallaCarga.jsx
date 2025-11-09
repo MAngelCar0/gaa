@@ -12,7 +12,7 @@ const PantallaCarga = ({ onFinish }) => {
   return (
     <div className="loading-overlay">
       <div className="loading-logo">
-        <h1 className="neon-text">GAA</h1>
+      <img src="/logo.1.png" alt="" />
         <div className="spinner"></div>
       </div>
     </div>

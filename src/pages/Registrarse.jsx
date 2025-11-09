@@ -59,7 +59,7 @@ function Registrarse() {
       {loading && <PantallaCarga />}
       <main className="Form-loging">
         <Link className="Form-registro-logo" to="/">
-          <img src="/gaa-simple.png" alt="Logo GAA" />
+          <img src="/logo.1.png" alt="Logo GAA" />
         </Link>
         <h2 className="Form-loging-title">Registrarse</h2>
 

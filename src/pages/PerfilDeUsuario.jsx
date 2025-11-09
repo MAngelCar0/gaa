@@ -64,15 +64,15 @@ const PerfilDeUsuario = () => {
       {/* --- Sidebar lateral --- */}
       <aside className="sidebar">
         <div className="logo-container">
-
           <img
-            src="./public/logo.png"
+            src="/logo.1.png"
             alt="Logo"
             className="logo-img"
             onClick={() => navigate('/')}
           />
 
           {/* --- Mini perfil superior --- */}
+
           <div className="mini-perfil">
             {avatar ? (
               <img
@@ -95,6 +95,9 @@ const PerfilDeUsuario = () => {
             ) : (
               <AvatarSeguro src={avatar} alt="Avatar" clase="mini-avatar" />
             )}
+
+          <div className="mini-perfil" onClick={() => setVistaActiva('perfil')}>
+            <AvatarSeguro src={avatar} alt="Avatar" clase="mini-avatar" />
 
             <div className="mini-info">
               <h4>{datos.nombre || datos.username || 'Usuario'}</h4>
@@ -144,4 +147,9 @@ const PerfilDeUsuario = () => {
   );
 };
 
+
 export default PerfilDeUsuario;
+
+
+export default PerfilDeUsuario;
+
