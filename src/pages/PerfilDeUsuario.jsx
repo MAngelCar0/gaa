@@ -72,8 +72,33 @@ const PerfilDeUsuario = () => {
           />
 
           {/* --- Mini perfil superior --- */}
+
+          <div className="mini-perfil">
+            {avatar ? (
+              <img
+                src={avatar}
+                alt="Avatar"
+                className="mini-avatar"
+                onClick={() => {
+                  setVistaActiva('perfil');
+                  navigate('/perfil');
+                }}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    setVistaActiva('perfil');
+                    navigate('/perfil');
+                  }
+                }}
+              />
+            ) : (
+              <AvatarSeguro src={avatar} alt="Avatar" clase="mini-avatar" />
+            )}
+
           <div className="mini-perfil" onClick={() => setVistaActiva('perfil')}>
             <AvatarSeguro src={avatar} alt="Avatar" clase="mini-avatar" />
+
             <div className="mini-info">
               <h4>{datos.nombre || datos.username || 'Usuario'}</h4>
               <p>@{datos.username || 'sin_usuario'}</p>
@@ -124,3 +149,7 @@ const PerfilDeUsuario = () => {
 
 
 export default PerfilDeUsuario;
+
+
+export default PerfilDeUsuario;
+
