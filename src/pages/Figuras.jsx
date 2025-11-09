@@ -14,7 +14,6 @@ function Figuras() {
       .then(([data1, data2]) => {
         const todosLosProductos = [...data1, ...data2];
 
-        // Mezclar aleatoriamente
         const productosMezclados = todosLosProductos.sort(() => Math.random() - 0.5);
 
         setProductos(productosMezclados);
