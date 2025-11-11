@@ -70,6 +70,7 @@ const PerfilDeUsuario = () => {
             className="logo-img"
             onClick={() => navigate('/')}
           />
+            </div>
 
           {/* --- Mini perfil superior --- */}
 
@@ -95,7 +96,6 @@ const PerfilDeUsuario = () => {
             ) : (
               <AvatarSeguro src={avatar} alt="Avatar" clase="mini-avatar" />
             )}
-
           <div className="mini-perfil" onClick={() => setVistaActiva('perfil')}>
             <AvatarSeguro src={avatar} alt="Avatar" clase="mini-avatar" />
 
@@ -149,7 +149,5 @@ const PerfilDeUsuario = () => {
 
 
 export default PerfilDeUsuario;
-
-
-export default PerfilDeUsuario;
+// export default PerfilDeUsuario; // duplicado comentado
 

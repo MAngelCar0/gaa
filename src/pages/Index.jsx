@@ -5,6 +5,8 @@ import { Tiendas } from '../components/Tiendas';
 import Footer from '../components/Footer';
 import IniciarSesion from '../pages/IniciarSesion';
 import Registrarse from '../pages/Registrarse';
+import NotFound from '../pages/NotFound';
+
 
 
 function Index() {

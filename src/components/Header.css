@@ -19,7 +19,6 @@ body {
   position: sticky;
   flex-direction: column;
   top: 0;
-  
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
@@ -36,8 +35,8 @@ body {
 
 /* LOGO */
 .header-logo img {
-  width: 180px;
-  height: 100px;
+  width: 160px;
+  height: 70px;
   border-radius: 8px;
   object-fit: contain;
   margin-left: 2rem;
@@ -54,7 +53,7 @@ body {
 
 .header-input {
   flex: 1;
-  height: 38px;
+  height: 45px;
   padding: 0 15px;
   border: none;
   border-radius: 8px 0 0 8px;
@@ -66,7 +65,7 @@ body {
 
 .header-buscar {
   height: 46px;
-  padding: 0 25px;
+  padding: 0 20px;
   background-color: #9504a5;
   color: #fff;
   border: none;
@@ -96,6 +95,7 @@ body {
   align-items: center;
   gap: 0.6rem;
   cursor: pointer;
+  margin-right: 4rem;
 }
 
 .header-user-img {
@@ -113,12 +113,14 @@ body {
 
 .header-auth {
   display: flex;
-  gap: 15px;
+  gap: 4rem;
 }
 
 .header-user-action {
   color: #bffcff;
   font-size: 16px;
+  margin-right: 2rem;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 

@@ -11,6 +11,8 @@ function Header() {
     navigate('/perfil');
   };
 
+
+
   return (
     <header className="header">
       <div className="header-top">
@@ -25,7 +27,7 @@ function Header() {
             type="text"
             placeholder="Buscar producto..."
           />
-          <button className="header-buscar">Buscar</button>
+          <button className="header-buscar" onClick={() => navigate('/NotFound')}>Buscar</button>
         </div>
 
         <div className="header-user">
