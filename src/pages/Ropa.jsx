@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Productos from '../components/Productos';
 import { Tiendas } from '../components/Tiendas';
 
-function Ropa() {
+function Ropa({ onSeleccionarFavorito }) {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,12 @@ function Ropa() {
         // Mezclar aleatoriamente
         const prendasMezcladas = todasLasPrendas.sort(() => Math.random() - 0.5);
 
-        setProductos(prendasMezcladas);
+        const prendasConId = prendasMezcladas.map(p => ({
+          ...p,
+          id: p.id ?? p.redireccion_url ?? p.image_url ?? p.title,
+        }));
+
+        setProductos(prendasConId);
       })
       .catch(err => console.error('Error al cargar ropa:', err));
   }, []);
@@ -25,7 +30,7 @@ function Ropa() {
   return (
     <>
       <Header />
-      <Productos productos={productos} />
+      <Productos productos={productos} onSeleccionarFavorito={onSeleccionarFavorito} />
       <Tiendas />
     </>
   );

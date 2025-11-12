@@ -74,7 +74,6 @@ const Sugerencias = () => {
 
           <nav className="sidebar-menu">
             <button onClick={() => navigate('/')}>General</button>
-            <button onClick={() => navigate('/favoritos')}>Favoritos</button>
             <button onClick={() => navigate('/valoraciones')}>Valoraciones</button>
             <button onClick={() => navigate('/ayuda')}>Centro de ayuda</button>
             <button onClick={() => navigate('/sugerencias')}>Sugerencias</button>

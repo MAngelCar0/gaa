@@ -1,0 +1,58 @@
+/* Ajustes específicos de Favoritos. Reutiliza estilos base del perfil. */
+
+.tarjetas-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.producto-card {
+  background: #12121a;
+  border: 1px solid #1f1f29;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0a0a0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.producto-contenido {
+  padding: 12px;
+}
+
+.producto-contenido h2 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.producto-contenido p {
+  color: #9aa0a6;
+  margin: 0;
+}
+
+.btn-quitar-favorito {
+  margin-top: 8px;
+  background: #a904bf;
+  border: none;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-quitar-favorito:hover {
+  background: #d705f2;
+}

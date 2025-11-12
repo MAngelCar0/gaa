@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Productos from '../components/Productos';
 import { Tiendas } from '../components/Tiendas';
 
-function Accesorios() {
+function Accesorios({ onSeleccionarFavorito }) {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,13 @@ function Accesorios() {
 
         const productosMezclados = todosLosProductos .sort(() => Math.random() - 0.5);
 
-        setProductos(productosMezclados);
+        // Asignar id único por producto (preferimos redireccion_url, luego image_url, luego title)
+        const productosConId = productosMezclados.map(p => ({
+          ...p,
+          id: p.id ?? p.redireccion_url ?? p.image_url ?? p.title,
+        }));
+
+        setProductos(productosConId);
       })
       .catch(err => console.error('Error al cargar accesorios:', err));
   }, []);
@@ -26,7 +32,7 @@ function Accesorios() {
   return (
     <>
       <Header />
-      <Productos productos={productos} />
+      <Productos productos={productos} onSeleccionarFavorito={onSeleccionarFavorito} />
       <Tiendas />
     </>
   );

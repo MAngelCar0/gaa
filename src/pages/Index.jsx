@@ -7,14 +7,16 @@ import IniciarSesion from '../pages/IniciarSesion';
 import Registrarse from '../pages/Registrarse';
 
 
-function Index() {
+function Index({ onSeleccionarFavorito }) {
   return (
     <>
       <Header />
       <Carrusel />
       <main style={{ padding: '0', color: '#bffcff' }}>
-        <section>
-        </section>
+        
+        {/* Agregamos el componente de Productos para mostrar las tarjetas */}
+        <Productos productos={[]} onSeleccionarFavorito={onSeleccionarFavorito} />
+        
         {/* Agregamos el componente de Tiendas */}
         <Tiendas />
       </main>

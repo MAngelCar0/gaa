@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Productos from '../components/Productos';
 import { Tiendas } from '../components/Tiendas';
 
-function Figuras() {
+function Figuras({ onSeleccionarFavorito }) {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -16,7 +16,12 @@ function Figuras() {
 
         const productosMezclados = todosLosProductos.sort(() => Math.random() - 0.5);
 
-        setProductos(productosMezclados);
+        const productosConId = productosMezclados.map(p => ({
+          ...p,
+          id: p.id ?? p.redireccion_url ?? p.image_url ?? p.title,
+        }));
+
+        setProductos(productosConId);
       })
       .catch(err => console.error('Error al cargar figuras:', err));
   }, []);
@@ -24,7 +29,7 @@ function Figuras() {
   return (
     <>
       <Header />
-      <Productos productos={productos} />
+      <Productos productos={productos} onSeleccionarFavorito={onSeleccionarFavorito} />
       <Tiendas />
     </>
   );
