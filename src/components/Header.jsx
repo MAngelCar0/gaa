@@ -1,11 +1,37 @@
 import { Link,useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ContextoUsuario } from '../pages/ContextoUsuario';
 import './Header.css';
 
 function Header() {
   const { datos, avatar } = useContext(ContextoUsuario);
   const navigate = useNavigate();
+  const [favoritosCount, setFavoritosCount] = useState(0);
+
+  useEffect(() => {
+    const leerCount = () => {
+      try {
+        const guardados = JSON.parse(localStorage.getItem('misFavoritos') || '[]');
+        setFavoritosCount(Array.isArray(guardados) ? guardados.length : 0);
+      } catch {
+        setFavoritosCount(0);
+      }
+    };
+    leerCount();
+    const onUpdate = (e) => {
+      if (e?.detail?.count !== undefined) {
+        setFavoritosCount(e.detail.count);
+      } else {
+        leerCount();
+      }
+    };
+    window.addEventListener('favoritosActualizados', onUpdate);
+    window.addEventListener('storage', onUpdate);
+    return () => {
+      window.removeEventListener('favoritosActualizados', onUpdate);
+      window.removeEventListener('storage', onUpdate);
+    };
+  }, []);
 
   const handleAvatarClick = () => {
     navigate('/perfil');
@@ -30,13 +56,18 @@ function Header() {
 
         <div className="header-user">
           {datos?.nombre ? (
-            <div className="header-user-info" onClick={handleAvatarClick}>
-              <img
-                className="header-user-img"
-                src={avatar || '/logo.1.png'}
-                alt="Avatar"
-              />
-              <span className="header-user-name">{datos.nombre}</span>
+            <div className="header-user-controls">
+              <div className="header-user-info" onClick={handleAvatarClick}>
+                <img
+                  className="header-user-img"
+                  src={avatar || '/logo.1.png'}
+                  alt="Avatar"
+                />
+                <span className="header-user-name">{datos.nombre}</span>
+              </div>
+              <Link className="header-favoritos" to="/favoritos">
+                Favoritos ({favoritosCount})
+              </Link>
             </div>
           ) : (
             <div className="header-auth">

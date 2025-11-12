@@ -37,7 +37,6 @@ const PerfilDeUsuario = () => {
 
   const rutas = {
     General: () => setVistaActiva('general'),
-    Favoritos: () => navigate('/favoritos'),
     Valoraciones: () => navigate('/valoraciones'),
     'Centro de ayuda': () => navigate('/ayuda'),
     Sugerencias: () => navigate('/sugerencias'),

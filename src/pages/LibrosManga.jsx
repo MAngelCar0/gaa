@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Productos from '../components/Productos';
 import { Tiendas } from '../components/Tiendas';
 
-function LibrosManga() {
+function LibrosManga({ onSeleccionarFavorito }) {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,12 @@ function LibrosManga() {
         // Mezclar aleatoriamente
         const librosMezclados = todosLosLibros.sort(() => Math.random() - 0.5);
 
-        setProductos(librosMezclados);
+        const librosConId = librosMezclados.map(p => ({
+          ...p,
+          id: p.id ?? p.redireccion_url ?? p.image_url ?? p.title,
+        }));
+
+        setProductos(librosConId);
       })
       .catch(err => console.error('Error al cargar libros y mangas:', err));
   }, []);
@@ -28,7 +33,7 @@ function LibrosManga() {
   return (
     <>
       <Header />
-      <Productos productos={productos} />
+      <Productos productos={productos} onSeleccionarFavorito={onSeleccionarFavorito} />
       <Tiendas />
     </>
   );

@@ -8,7 +8,6 @@ import './PerfilDeUsuario.css';
 
 const opcionesSidebar = [
   "General",
-  "Favoritos",
   "Valoraciones",
   "Centro de ayuda",
   "Sugerencias",
@@ -56,7 +55,6 @@ export default function Valoraciones() {
                 key={i}
                 onClick={() => {
                   if (opcion === "General") navigate("/");
-                  else if (opcion === "Favoritos") navigate("/favoritos");
                   else if (opcion === "Valoraciones") navigate("/valoraciones");
                   else if (opcion === "Invitar a amigos") navigate("/invitar");
                   else if (opcion === "Centro de ayuda") navigate("/ayuda");

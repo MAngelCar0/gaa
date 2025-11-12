@@ -5,7 +5,6 @@ import './CentroAyuda.css';
 
 const opcionesSidebar = [
   'General',
-  'Favoritos',
   'Valoraciones',
   'Centro de ayuda',
   'Sugerencias',
@@ -69,7 +68,6 @@ const CentroAyuda = () => {
                 key={i}
                 onClick={() => {
                   if (opcion === 'General') navigate('/');
-                  else if (opcion === 'Favoritos') navigate('/favoritos');
                   else if (opcion === 'Valoraciones') navigate('/valoraciones');
                   else if (opcion === 'Centro de ayuda') navigate('/ayuda');
                   else if (opcion === 'Sugerencias') navigate('/sugerencias');

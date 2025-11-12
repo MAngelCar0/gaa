@@ -91,6 +91,12 @@ body {
   gap: 1rem;
 }
 
+.header-user-controls {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Más separación entre perfil y Favoritos */
+}
+
 .header-user-info {
   display: flex;
   align-items: center;
@@ -158,4 +164,22 @@ body {
 
 .header-categorias a {
   text-decoration: none; 
+}
+
+/* Botón Favoritos junto al perfil */
+.header-favoritos {
+  color: #00f6ff;
+  background-color: #000;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 15px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.header-favoritos:hover {
+  background-color: #9504a5;
+  color: #bffcff;
+  transform: translateY(-2px);
 }
