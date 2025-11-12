@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { ContextoUsuario } from './ContextoUsuario';
-
 import './Sugerencias.css';
 
 const Sugerencias = () => {
@@ -60,7 +58,6 @@ const Sugerencias = () => {
       <aside className="sidebar">
         <div className="logo-container">
           <img src="/logo.1.png" alt="Logo" className="logo-img" />
-
           <div className="mini-perfil">
             <img 
   src={avatar || '/default-avatar.png'} 
