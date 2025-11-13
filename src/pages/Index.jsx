@@ -15,10 +15,8 @@ function Index() {
       <Header />
       <Carrusel />
       <main style={{ padding: '0', color: '#bffcff' }}>
-        
-        {/* Agregamos el componente de Productos para mostrar las tarjetas */}
-        <Productos productos={[]} />
-        
+        <section>
+        </section>
         {/* Agregamos el componente de Tiendas */}
         <Tiendas />
       </main>

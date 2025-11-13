@@ -8,10 +8,9 @@ import './PerfilDeUsuario.css';
 const PerfilDeUsuario = () => {
   const navigate = useNavigate();
   const [vistaActiva, setVistaActiva] = useState('perfil');
-  const [cargando, setCargando] = useState(false); // estado para la pantalla de carga
+  const [cargando, setCargando] = useState(false);
   const { datos, avatar, setDatos, setAvatar } = useContext(ContextoUsuario);
 
-  // --- Función para limpiar la sesión ---
   const limpiarSesion = () => {
     try {
       localStorage.removeItem('datosUsuario');
@@ -23,23 +22,19 @@ const PerfilDeUsuario = () => {
     }
   };
 
-  // --- Función para cerrar sesión con animación ---
   const handleLogout = () => {
-    setCargando(true); // activa pantalla de carga
+    setCargando(true);
     limpiarSesion();
 
-    // espera 2.5s antes de redirigir
     setTimeout(() => {
       navigate('/');
     }, 2500);
   };
 
-  // --- Si está cargando, muestra pantalla de carga personalizada ---
   if (cargando) {
     return <PantallaCarga mensaje="Cerrando sesión..." />;
   }
 
-  // --- Rutas laterales del perfil ---
   const rutas = {
     General: () => setVistaActiva('general'),
     Favoritos: () => navigate('/favoritos'),
@@ -48,7 +43,6 @@ const PerfilDeUsuario = () => {
     Sugerencias: () => navigate('/sugerencias'),
   };
 
-  // --- Componente Avatar seguro (con placeholder) ---
   const AvatarSeguro = ({ src, alt, clase }) => (
     src ? (
       <img src={src} alt={alt} className={clase} />
@@ -61,7 +55,8 @@ const PerfilDeUsuario = () => {
 
   return (
     <div className="dashboard">
-      {/* --- Sidebar lateral --- */}
+      
+      {/* --- Sidebar --- */}
       <aside className="sidebar">
         <div className="logo-container">
           <img
@@ -71,8 +66,6 @@ const PerfilDeUsuario = () => {
             onClick={() => navigate('/')}
           />
             </div>
-
-          {/* --- Mini perfil superior --- */}
 
           <div className="mini-perfil">
             {avatar ? (
@@ -96,6 +89,7 @@ const PerfilDeUsuario = () => {
             ) : (
               <AvatarSeguro src={avatar} alt="Avatar" clase="mini-avatar" />
             )}
+
           <div className="mini-perfil" onClick={() => setVistaActiva('perfil')}>
             <AvatarSeguro src={avatar} alt="Avatar" clase="mini-avatar" />
 
@@ -105,7 +99,7 @@ const PerfilDeUsuario = () => {
             </div>
           </div>
 
-          {/* --- Menú lateral dinámico --- */}
+          {/* --- Menú lateral --- */}
           <nav className="sidebar-menu">
             {Object.keys(rutas).map((opcion) => (
               <button key={opcion} onClick={rutas[opcion]}>
@@ -136,7 +130,6 @@ const PerfilDeUsuario = () => {
           </div>
         </div>
 
-        {/* --- Sección de configuración general --- */}
         {vistaActiva === 'general' && (
           <div className="perfil-card general-card">
             <General />
@@ -147,7 +140,5 @@ const PerfilDeUsuario = () => {
   );
 };
 
-
 export default PerfilDeUsuario;
-// export default PerfilDeUsuario; // duplicado comentado
 

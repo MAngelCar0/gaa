@@ -10,10 +10,11 @@ function Accesorios() {
     Promise.all([
       fetch('/JSON/accesorios/accesorios.json').then(res => res.json()),
       fetch('/JSON/accesorios/accesorios1.json').then(res => res.json()),
-      fetch('/JSON/accesorios/accesorios2.json').then(res => res.json())
+      fetch('/JSON/accesorios/accesorios2.json').then(res => res.json()),
+      fetch('/JSON/accesorios/productos_accesorios_la_casa_del_play.json').then(res => res.json()),
     ])
-      .then(([data1, data2, data3]) => {
-        const todosLosProductos = [...data1, ...data2, ...data3];
+      .then(([data1, data2, data3, data4]) => {
+        const todosLosProductos = [...data1, ...data2, ...data3, ...data4];
 
         const productosMezclados = todosLosProductos .sort(() => Math.random() - 0.5);
 

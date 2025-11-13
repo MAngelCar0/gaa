@@ -1,12 +1,12 @@
 import './Productos.css';
 
 function Productos({ productos }) {
-  // Usamos los primeros 4 productos como destacados
   const tarjetasDestacadas = productos.slice(0, 4);
+  const restoDeProductos = productos.slice(4);
 
   return (
     <>
-      {/* Tarjetas destacadas desde JSON */}
+      {/* Tarjetas destacadas */}
       <div className="tarjetas-container">
         {tarjetasDestacadas.map((tarjeta, index) => (
           <a
@@ -27,26 +27,26 @@ function Productos({ productos }) {
         ))}
       </div>
 
-      {/* Resto de productos desde JSON */}
-<section className="productos">
-  {productos.map((producto, index) => (
-    <a
-      key={index}
-      href={producto.redireccion_url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="producto-card"
-    >
-      <div className="image-container">
-        <img src={producto.image_url} alt={producto.title} />
-      </div>
-      <div className="producto-contenido">
-        <h2>{producto.title}</h2>
-        <p>{producto.price}</p>
-      </div>
-    </a>
-  ))}
-</section>
+      {/* Resto de productos */}
+      <section className="productos">
+        {restoDeProductos.map((producto, index) => (
+          <a
+            key={index}
+            href={producto.redireccion_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="producto-card"
+          >
+            <div className="image-container">
+              <img src={producto.image_url} alt={producto.title} />
+            </div>
+            <div className="producto-contenido">
+              <h2>{producto.title}</h2>
+              <p>{producto.price}</p>
+            </div>
+          </a>
+        ))}
+      </section>
     </>
   );
 }
