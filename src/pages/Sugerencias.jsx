@@ -87,6 +87,8 @@ const Sugerencias = () => {
           <h2>Sugerencias</h2>
           <p>¿Tienes ideas, mejoras o algo que quieras compartir? ¡Este es tu espacio!</p>
 
+          
+
           <form onSubmit={handleSubmit}>
             <textarea value={mensaje} onChange={(e) => setMensaje(e.target.value)} placeholder="Escribe tu sugerencia aquí..." rows={5} />
             <div className="form-actions">

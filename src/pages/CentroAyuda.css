@@ -81,6 +81,39 @@
   transform: scale(1.03);
 }
 
+/* Círculo en sidebar (consistente con mini-avatar) */
+.sidebar-ring-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 1.25rem 0;
+}
+
+.sidebar-avatar-ring {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--purple-light);
+  box-shadow: 0 0 10px rgba(215, 5, 242, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--purple-black);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar-avatar-icon {
+  font-size: 32px;
+  color: var(--purple-light);
+}
+
 /* 🌟 Modal de contacto */
 .modal-overlay {
   position: fixed;
