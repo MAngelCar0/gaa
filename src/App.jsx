@@ -19,6 +19,7 @@ import Ropa from "./pages/Ropa";
 import Sugerencias from "./pages/Sugerencias";
 import Valoraciones from "./pages/Valoraciones";
 import Videojuegos from "./pages/Videojuegos";
+import Buscar from "./pages/Buscar";
 
 import "./App.css";
 
@@ -34,10 +35,9 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("misFavoritos", JSON.stringify(favoritos));
-    // Notifica a toda la app que los favoritos han cambiado
     try {
       window.dispatchEvent(new CustomEvent('favoritosActualizados', { detail: { count: favoritos.length } }));
-    } catch {}
+    } catch (e) { void e; }
   }, [favoritos]);
 
   const manejarFavorito = (producto, activo) => {
@@ -63,6 +63,7 @@ function App() {
           <Route path="/libro-mangas" element={<LibrosManga onSeleccionarFavorito={manejarFavorito} />} />
           <Route path="/perifericos" element={<Perifericos onSeleccionarFavorito={manejarFavorito} />} />
           <Route path="/videojuegos" element={<Videojuegos onSeleccionarFavorito={manejarFavorito} />} />
+          <Route path="/buscar" element={<Buscar onSeleccionarFavorito={manejarFavorito} />} />
           <Route path="/iniciar-sesion" element={<IniciarSesion />} />
           <Route path="/registrarse" element={<Registrarse />} />
           <Route path="/carrusel" element={<Carrusel />} />

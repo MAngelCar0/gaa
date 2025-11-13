@@ -57,8 +57,7 @@ const CentroAyuda = () => {
   style={{ cursor: 'pointer' }}
 />}
             <div className="mini-info">
-              <h4>{datos.nombre || datos.username || 'Usuario'}</h4>
-              <p>@{datos.username || 'sin_usuario'}</p>
+              <h4>{datos.nombre || 'Usuario'}</h4>
             </div>
           </div>
 

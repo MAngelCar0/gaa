@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
 import "./Productos.css";
 
-function Productos({ productos, onSeleccionarFavorito }) {
+function Productos({ productos, onSeleccionarFavorito, filtroTexto = "" }) {
   // Estado local para manejar los corazones activos
   const [favoritos, setFavoritos] = useState({});
+  const [fadeClass, setFadeClass] = useState("");
+  useEffect(() => {
+    setFadeClass("fade-in");
+    const t = setTimeout(() => setFadeClass(""), 300);
+    return () => clearTimeout(t);
+  }, [filtroTexto]);
 
   // Sincroniza el estado local de corazones con lo guardado en localStorage
   useEffect(() => {
@@ -22,8 +28,12 @@ function Productos({ productos, onSeleccionarFavorito }) {
     }
   }, [productos]);
 
-  const tarjetasDestacadas = productos.slice(0, 4);
-  const restoDeProductos = productos.slice(4);
+  const texto = (filtroTexto || "").toLowerCase().trim();
+  const productosFiltrados = texto
+    ? productos.filter((p) => (p.title || "").toLowerCase().includes(texto))
+    : productos;
+  const tarjetasDestacadas = productosFiltrados.slice(0, 4);
+  const restoDeProductos = productosFiltrados.slice(4);
 
   const toggleFavorito = (producto) => {
     setFavoritos((prev) => {
@@ -87,7 +97,7 @@ function Productos({ productos, onSeleccionarFavorito }) {
   };
 
   return (
-    <>
+    <div className={`productos-transition ${fadeClass}`}>
       {/* Tarjetas destacadas */}
       <div className="tarjetas-container">
         {tarjetasDestacadas.map((tarjeta) =>
@@ -101,7 +111,7 @@ function Productos({ productos, onSeleccionarFavorito }) {
           renderTarjeta(producto, "producto-card")
         )}
       </section>
-    </>
+    </div>
   );
 }
 

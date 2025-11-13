@@ -1,4 +1,4 @@
-import { Link,useNavigate } from 'react-router-dom';
+import { Link,useNavigate, useLocation } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { ContextoUsuario } from '../pages/ContextoUsuario';
 import './Header.css';
@@ -6,7 +6,9 @@ import './Header.css';
 function Header() {
   const { datos, avatar } = useContext(ContextoUsuario);
   const navigate = useNavigate();
+  const location = useLocation();
   const [favoritosCount, setFavoritosCount] = useState(0);
+  const [busqueda, setBusqueda] = useState('');
 
   useEffect(() => {
     const leerCount = () => {
@@ -33,6 +35,47 @@ function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const q = params.get('q') || '';
+    setBusqueda(q);
+  }, [location.search]);
+
+  const handleSearch = () => {
+    const q = busqueda.trim();
+    const destino = detectarRutaPorTexto(busqueda);
+    if (!q) {
+      navigate('/');
+      return;
+    }
+    if (destino) {
+      navigate(`${destino}?q=${encodeURIComponent(q)}`);
+    } else {
+      navigate(`/buscar?q=${encodeURIComponent(q)}`);
+    }
+  };
+
+  const detectarRutaPorTexto = (texto) => {
+    const s = (texto || '').toLowerCase();
+    const mapas = [
+      { ruta: '/videojuegos', keys: ['juego','juegos','videojuego','videojuegos','game'] },
+      { ruta: '/consolas', keys: ['consola','consolas','ps5','ps4','play','xbox','switch','nintendo'] },
+      { ruta: '/ropa', keys: ['ropa','camisa','hoodie','buzo','pantalon','playera','polera'] },
+      { ruta: '/accesorios', keys: ['accesorio','accesorios','pin','collar','llavero','mug','monedero'] },
+      { ruta: '/figuras', keys: ['figura','figuras','funko','estatua','modelo'] },
+      { ruta: '/perifericos', keys: ['periferico','perifericos','mouse','teclado','audifono','audifonos','headset','monitor'] },
+      { ruta: '/libro-mangas', keys: ['libro','libros','manga','mangas','comic','novela'] },
+    ];
+    for (const m of mapas) {
+      for (const k of m.keys) {
+        if (s.includes(k)) return m.ruta;
+      }
+    }
+    return null;
+  };
+
+  
+
   const handleAvatarClick = () => {
     navigate('/perfil');
   };
@@ -50,8 +93,18 @@ function Header() {
             className="header-input"
             type="text"
             placeholder="Buscar producto..."
+            value={busqueda}
+            onChange={(e) => {
+              const val = e.target.value;
+              setBusqueda(val);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                handleSearch();
+              }
+            }}
           />
-          <button className="header-buscar">Buscar</button>
+          <button className="header-buscar" onClick={handleSearch}>Buscar</button>
         </div>
 
         <div className="header-user">

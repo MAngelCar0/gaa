@@ -10,6 +10,23 @@
   margin: 0 auto;
 }
 
+/* Transición sutil al cambiar de filtro/categoría */
+.productos-transition {
+  opacity: 1;
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+
+.productos-transition.fade-in {
+  opacity: 0;
+  transform: scale(0.99);
+  animation: productosFadeIn 250ms ease forwards;
+}
+
+@keyframes productosFadeIn {
+  from { opacity: 0; transform: scale(0.99); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 /* Acciones de selección múltiple */
 .productos-actions {
   display: flex;
@@ -168,7 +185,7 @@
   border-radius: 50%;
   padding: 6px 8px;
   cursor: pointer;
-  color: white; /* 🤍 Blanco por defecto */
+  color: grey; /* 🤍 Blanco por defecto */
   transition: transform 0.2s ease, color 0.3s ease;
   z-index: 10;
   pointer-events: auto;
