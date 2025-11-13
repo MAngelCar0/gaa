@@ -126,6 +126,7 @@ body {
   color: #bffcff;
   font-size: 16px;
   transition: color 0.3s ease;
+  margin-right: 2rem;
 }
 
 .header-user-action:hover {
