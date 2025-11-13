@@ -100,9 +100,22 @@ function Registrarse() {
             required
           />
 
+          <div className="form-redes">
+            <p className="form-redes-title">Regístrate con</p>
+            <div className="form-redes-icons">
+              <span style={{ color: '#bffcff', fontSize: '1.5rem' }}>📘</span>
+              <span style={{ color: '#bffcff', fontSize: '1.5rem' }}>🐦</span>
+              <span style={{ color: '#bffcff', fontSize: '1.5rem' }}>📷</span>
+            </div>
+          </div>
+
           <button className="Form-loging-button" type="submit">
             Crear cuenta
           </button>
+
+          <p className="Form-loging-registrar">
+            ¿Ya tienes cuenta? <Link to="/iniciar-sesion">Inicia sesión aquí</Link>
+          </p>
 
           {error && <p style={{ color: "salmon", textAlign: "center" }}>{error}</p>}
         </form>
