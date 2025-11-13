@@ -30,7 +30,7 @@ function Index({ onSeleccionarFavorito }) {
   return (
     <>
       <Header />
-      <Carrusel slides={noticias} />
+      <Carrusel />
       <SeccionNoticias noticias={todasNoticias} />
         <Productos productos={[]} onSeleccionarFavorito={onSeleccionarFavorito} />
         <Tiendas />
