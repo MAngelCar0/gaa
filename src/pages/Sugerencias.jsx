@@ -31,7 +31,7 @@ const Sugerencias = () => {
       const nueva = {
         texto: mensaje,
         fecha: new Date().toLocaleString(),
-        usuario: datos.username || 'Anónimo',
+        usuario: datos.nombre || 'Anónimo',
         avatar: avatar || '/default-avatar.png',
       };
       const actualizadas = [nueva, ...sugerencias];
@@ -68,7 +68,6 @@ const Sugerencias = () => {
 />
             <div className="mini-info">
               <h4>{datos.nombre || 'Esteban Dominguez'}</h4>
-              <p>@{datos.username || 'estebanXD'}</p>
             </div>
           </div>
 
@@ -103,7 +102,7 @@ const Sugerencias = () => {
                 <img src={s.avatar} alt="Avatar" className="sugerencia-avatar" />
                 <div className="sugerencia-contenido">
                   <p className="sugerencia-texto">{s.texto}</p>
-                  <small className="sugerencia-meta">Enviado por <strong>@{s.usuario}</strong> el {s.fecha}</small>
+                  <small className="sugerencia-meta">Enviado por <strong>{s.usuario}</strong> el {s.fecha}</small>
                 </div>
                 <div className="sugerencia-actions">
                   <button className="sugerencia-borrar" onClick={() => handleDelete(i)}>Borrar</button>

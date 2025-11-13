@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Productos from '../components/Productos';
 import { Tiendas } from '../components/Tiendas';
 
 function Consolas({ onSeleccionarFavorito }) {
   const [productos, setProductos] = useState([]);
+  const location = useLocation();
+  const q = new URLSearchParams(location.search).get('q') || '';
 
   useEffect(() => {
     Promise.all([
@@ -30,7 +33,7 @@ function Consolas({ onSeleccionarFavorito }) {
   return (
     <>
       <Header />
-      <Productos productos={productos} onSeleccionarFavorito={onSeleccionarFavorito} />
+      <Productos productos={productos} onSeleccionarFavorito={onSeleccionarFavorito} filtroTexto={q} />
       <Tiendas />
     </>
   );

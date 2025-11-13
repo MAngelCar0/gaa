@@ -30,7 +30,6 @@ const General = () => {
           ...usuarios[idx],
           name: updatedDatos.nombre || usuarios[idx].name,
           email: updatedDatosOrFallback(updatedDatos.email, usuarios[idx].email),
-          username: updatedDatos.username || usuarios[idx].username,
           password: updatedDatos.password || usuarios[idx].password,
           avatar: updatedDatos.avatar || usuarios[idx].avatar,
         };
@@ -148,17 +147,6 @@ const General = () => {
           value={datos.nombre || ''}
           onChange={handleChange}
           placeholder="Editar nombre completo"
-        />
-      </div>
-
-      <div className="setting-group">
-        <label>Nombre de usuario</label>
-        <input
-          type="text"
-          name="username"
-          value={datos.username || ''}
-          onChange={handleChange}
-          placeholder="Editar nombre de usuario"
         />
       </div>
 

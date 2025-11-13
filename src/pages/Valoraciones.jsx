@@ -28,7 +28,6 @@ export default function Valoraciones() {
   };
 
   const nombre = datos?.nombre || 'Esteban Dominguez';
-  const username = datos?.username || 'estebanXD';
   const avatarSrc = avatar || datos?.avatar || '/avatar.jpeg';
 
   return (
@@ -45,7 +44,6 @@ export default function Valoraciones() {
               />
             <div className="mini-info">
               <h4>{nombre}</h4>
-              <p>@{username}</p>
             </div>
           </div>
 

@@ -70,8 +70,7 @@ const PerfilDeUsuario = () => {
             <AvatarSeguro src={avatar} alt="Avatar" clase="mini-avatar" />
 
             <div className="mini-info">
-              <h4>{datos.nombre || datos.username || 'Usuario'}</h4>
-              <p>@{datos.username || 'sin_usuario'}</p>
+              <h4>{datos.nombre || 'Usuario'}</h4>
             </div>
           </div>
 
@@ -97,9 +96,8 @@ const PerfilDeUsuario = () => {
         <div className="perfil-card">
           <div className="perfil-header">
             <AvatarSeguro src={avatar} alt="Avatar" clase="avatar" />
-            <div className="perfil-info">
-              <h3>{datos.nombre || datos.username || 'Usuario sin nombre'}</h3>
-              <p><strong>Nombre de usuario:</strong> {datos.username || '—'}</p>
+          <div className="perfil-info">
+              <h3>{datos.nombre || 'Usuario sin nombre'}</h3>
               <p><strong>Correo electrónico:</strong> {datos.email || '—'}</p>
               <p><strong>Idioma:</strong> {datos.idioma || 'Español'}</p>
             </div>
