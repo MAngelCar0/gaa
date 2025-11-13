@@ -58,13 +58,27 @@ function Header() {
   const detectarRutaPorTexto = (texto) => {
     const s = (texto || '').toLowerCase();
     const mapas = [
-      { ruta: '/videojuegos', keys: ['juego','juegos','videojuego','videojuegos','game'] },
-      { ruta: '/consolas', keys: ['consola','consolas','ps5','ps4','play','xbox','switch','nintendo'] },
-      { ruta: '/ropa', keys: ['ropa','camisa','hoodie','buzo','pantalon','playera','polera'] },
-      { ruta: '/accesorios', keys: ['accesorio','accesorios','pin','collar','llavero','mug','monedero'] },
-      { ruta: '/figuras', keys: ['figura','figuras','funko','estatua','modelo'] },
-      { ruta: '/perifericos', keys: ['periferico','perifericos','mouse','teclado','audifono','audifonos','headset','monitor'] },
-      { ruta: '/libro-mangas', keys: ['libro','libros','manga','mangas','comic','novela'] },
+      { ruta: '/videojuegos', keys: [
+        'juego','juegos','videojuego','videojuegos','game','games','gaming','playstation','ps','psn','xbox','nintendo','switch','ps5','ps4','xbox-series-x','xbox-series-s','xbox-one','series x','series s','one','steam','epic','uplay','origin','battle.net','pc','digital','fisico','físico','retro','arcade','cartucho','dlc','expansion','expansión','demo'
+      ] },
+      { ruta: '/consolas', keys: [
+        'consola','consolas','ps5','ps4','play','playstation 5','playstation 4','ps3','ps2','ps1','xbox','xbox one','xbox 360','series x','series s','switch','switch oled','switch lite','nintendo','wii','wii u','gamecube','3ds','ds','nes','snes','megadrive','dreamcast','handheld','portatil','portátil'
+      ] },
+      { ruta: '/ropa', keys: [
+        'ropa','camisa','camiseta','playera','remera','polera','hoodie','hoodies','buzo','sudadera','chaqueta','pantalon','pantalón','polo','t-shirt','jersey','gorra','medias','calcetines','bufanda','guantes','kimono'
+      ] },
+      { ruta: '/accesorios', keys: [
+        'accesorio','accesorios','merch','merchandise','pin','pins','collar','colgante','llavero','llaveros','mug','taza','vaso','termo','monedero','pulsera','anillo','arete','aretes','pendiente','poster','póster','stickers','pegatina','carcasa'
+      ] },
+      { ruta: '/figuras', keys: [
+        'figura','figuras','funko','funkos','estatua','estatuas','modelo','model kit','maqueta','resina','nendoroid','figma','scale','gunpla','banpresto','kotobukiya','plush','peluche'
+      ] },
+      { ruta: '/perifericos', keys: [
+        'periferico','perifericos','periférico','periféricos','mouse','raton','ratón','mousepad','pad','teclado','teclados','audifono','audifonos','auricular','auriculares','headset','monitor','monitores','webcam','microfono','micrófono','altavoz','altavoces','speakers','soundbar','silla','chair'
+      ] },
+      { ruta: '/libro-mangas', keys: [
+        'libro','libros','manga','mangas','tomo','volumen','tankobon','cómic','comic','tebeo','novela','novela ligera','light novel','graphic novel','artbook'
+      ] },
     ];
     for (const m of mapas) {
       for (const k of m.keys) {
