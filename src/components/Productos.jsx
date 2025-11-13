@@ -60,7 +60,9 @@ function Productos({ productos, onSeleccionarFavorito, filtroTexto = "" }) {
           <img src={item.image_url} alt={item.title} loading="lazy" decoding="async" />
 
           <button
+            type="button"
             className={`btn-corazon ${esFavorito ? "active" : ""}`}
+            aria-pressed={esFavorito ? "true" : "false"}
             onClick={(e) => {
               e.stopPropagation();
               e.preventDefault();

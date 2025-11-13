@@ -204,6 +204,12 @@
   color: #ff00cc;
 }
 
+/* Asegura que el estado activo prevalezca en cualquier tarjeta */
+.producto-card .btn-corazon.active,
+.tarjeta-destacada .btn-corazon.active {
+  color: #ff00cc !important;
+}
+
 /* Efecto de agregado usando ::after */
 .btn-corazon::after {
   content: '';
