@@ -14,37 +14,58 @@ const images = [
   '/extraer o generar un.png'
 ];
 
-export default function Carrusel() {
+export default function Carrusel({ slides = [] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const intervalRef = useRef(null);
+  const sources = slides && slides.length ? slides.map(s => s.image_url) : images;
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? sources.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === sources.length - 1 ? 0 : prev + 1));
   };
 
   // Auto-rotate every 4 seconds
   useEffect(() => {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+      setCurrentIndex((prev) => (prev === sources.length - 1 ? 0 : prev + 1));
     }, 4000);
     return () => clearInterval(intervalRef.current);
-  }, []);
+  }, [sources.length]);
 
-  if (!images || images.length === 0) return null;
+  if (!sources || sources.length === 0) return null;
 
   return (
     <div className="carousel">
       <button className="nav left" onClick={() => { prevSlide(); clearInterval(intervalRef.current); }}>❮</button>
-      <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="carousel-image" />
+      <div className="carousel-slide">
+        {slides && slides.length ? (
+          slides[currentIndex]?.redireccion_url ? (
+          <a href={slides[currentIndex].redireccion_url} target="_blank" rel="noopener noreferrer">
+            <img src={sources[currentIndex]} alt={slides[currentIndex]?.title || `Slide ${currentIndex + 1}`} className="carousel-image" />
+          </a>
+          ) : (
+            <img src={sources[currentIndex]} alt={slides[currentIndex]?.title || `Slide ${currentIndex + 1}`} className="carousel-image" />
+          )
+        ) : (
+          <img src={sources[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="carousel-image" />
+        )}
+        {slides && slides.length ? (
+          <div className="carousel-caption">
+            <div className="caption-title">{slides[currentIndex]?.title || ''}</div>
+            {slides[currentIndex]?.category ? (
+              <div className="caption-subtitle">{slides[currentIndex].category}</div>
+            ) : null}
+          </div>
+        ) : null}
+      </div>
       <button className="nav right" onClick={() => { nextSlide(); clearInterval(intervalRef.current); }}>❯</button>
 
       <div className="carousel-indicators">
-        {images.map((_, idx) => (
+        {sources.map((_, idx) => (
           <button
             key={idx}
             className={`indicator ${idx === currentIndex ? 'active' : ''}`}
