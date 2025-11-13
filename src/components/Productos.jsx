@@ -57,7 +57,7 @@ function Productos({ productos, onSeleccionarFavorito, filtroTexto = "" }) {
     return (
       <div key={itemId} className={tipo}>
         <div className="image-container">
-          <img src={item.image_url} alt={item.title} />
+          <img src={item.image_url} alt={item.title} loading="lazy" decoding="async" />
 
           <button
             className={`btn-corazon ${esFavorito ? "active" : ""}`}
